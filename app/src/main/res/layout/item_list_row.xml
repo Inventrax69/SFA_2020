@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="@dimen/_3sdp"
+    card_view:cardUseCompatPadding="true">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_3sdp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layoutItemImage"
+            android:background="@drawable/pepsi_mock_image"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:scaleType="centerCrop"
+            android:alpha="0.50"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/txtProductName"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PEPSI 200 ML PET BOTTLE"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+
+
+        <TableLayout
+            android:layout_below="@+id/layoutItemImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_3sdp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/txtMRP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MRP : Rs 10"/>
+
+                <TextView
+                    android:id="@+id/txtAvailableStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Avail. Stock : 10cs"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <EditText
+                    android:id="@+id/inputCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Cases"/>
+                <EditText
+                    android:id="@+id/inputBottles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Bottles"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="Add"
+                    android:layout_span="2"
+                    android:padding="0dp"
+                    android:drawablePadding="0dp"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

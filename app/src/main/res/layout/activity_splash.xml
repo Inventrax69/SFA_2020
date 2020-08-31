@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/splash_screen_big"/>
+
+    <ImageView
+        android:id="@+id/img_pbpl_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/bigleap_logo"
+        android:visibility="invisible"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressSplash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_pbpl_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:indeterminate="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/img_inventrax_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/splash_txt_powered_by"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/img_inventrax_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.50"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:src="@drawable/inventrax_logo"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:autoLink="web"
+        android:gravity="center_horizontal"
+        android:text="@string/splash_txt_inventrax_site"
+        android:textSize="@dimen/_12sdp"/>
+
+</RelativeLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/_15sdp"
+    android:layout_marginRight="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginBottom="@dimen/_8sdp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CoolerCapacity"
+            android:textStyle="bold"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="2"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AssetMake"
+            android:textStyle="bold"
+            android:textSize="@dimen/_13sdp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_3sdp"
+        >
+
+        <Spinner
+            android:id="@+id/spinnerAssetCapacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:layout_weight="2"
+            android:entries="@array/array_cooler_capacity">
+
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/spinnerAssetMake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:entries="@array/array_asset_make">
+
+        </Spinner>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:weightSum="2"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:id="@+id/txtValidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Valid From - 05-Apr-2016"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:visibility="invisible"
+            />
+
+        <Button
+
+
+            android:layout_gravity="right"
+            android:id="@+id/btnViewPlan"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/View"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/white"
+            android:background="@drawable/ic_action_custom_button"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        >
+
+        <ImageView
+            android:id="@+id/imgPlanogram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/pepsi_logo"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

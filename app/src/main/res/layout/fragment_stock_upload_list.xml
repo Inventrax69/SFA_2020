@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutBrandPackFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Brand"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:layout_weight="0.8"/>
+
+            <Spinner
+                android:id="@+id/brand_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:spinnerMode="dialog"
+                android:layout_weight="1"></Spinner>
+
+            <!--<TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Pack"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_weight="0.8"/>
+
+            <Spinner
+                android:id="@+id/action_pack_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:spinnerMode="dialog"
+                android:layout_weight="1">
+
+            </Spinner>-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/fragment_sku_list_swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/skuLayoutBottomBar"
+            android:layout_below="@+id/layoutBrandPackFilter"
+            >
+    -->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_sku_list"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layoutBrandPackFilter"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_2sdp"
+        android:scrollbars="vertical" />
+    <!--
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    -->
+
+    <TextView
+        android:id="@+id/txtEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:text="@string/sku_list_recycler_empty_view"
+        android:visibility="gone" />
+
+    <!-- <RelativeLayout
+         android:id="@+id/skuLayoutBottomBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:background="@color/sku_list_bottom_bar_background_color"
+         android:padding="@dimen/sku_list_bottom_bar_padding"
+         android:visibility="gone">
+
+         <TextView
+             android:id="@+id/txtCartTotal"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/sku_list_txt_cart_total_margin_left"
+             android:text="TOTAL(0)"
+             android:textColor="@color/white"
+             android:textSize="@dimen/sku_list_txt_cart_total_text_size" />
+
+         <TextView
+             android:id="@+id/txtTotalPrice"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/txtCartTotal"
+             android:layout_marginLeft="@dimen/sku_list_txt_total_price_margin_left"
+             android:text="Rs 0"
+             android:textColor="@color/white"
+             android:textSize="@dimen/sku_list_txt_total_price_text_size"
+             android:textStyle="bold" />
+
+         <Button
+             android:id="@+id/btnCheckout"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:background="@drawable/ic_action_checkout_button"
+             android:gravity="center_horizontal|center_vertical"
+             android:paddingLeft="@dimen/sku_list_btn_checkout_padding_left"
+             android:paddingRight="@dimen/sku_list_btn_checkout_padding_right"
+             android:text="@string/sku_list_btn_checkout_text"
+             android:textColor="@color/white"
+             android:textSize="@dimen/sku_list_btn_checkout_text_size" />
+
+     </RelativeLayout>-->
+
+
+    <RelativeLayout
+        android:id="@+id/skuLayoutBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_action_checkout_background"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/txtCartTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:text="Total SKUs"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/txtSKUsModified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:text="Rs 0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableRight="@drawable/ic_action_arrow_right"
+                    android:layout_gravity="right"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/_7sdp"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:text="Update"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_13sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="100">
+
+                    <TextView
+                        android:id="@+id/txtLastauditDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_weight="500"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_weight="100">
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:id="@+id/frmlLastAuditDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TableLayout
+                                    android:id="@+id/tblLastAuditdate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="200dp"
+                                    />
+
+
+                            </FrameLayout>
+
+
+                        </HorizontalScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_100sdp"
+                                        android:layout_height="@dimen/_90sdp"
+                                        android:text="Outlet Status"
+                                        android:background="@drawable/ic_crf_custom_border_layout"
+                                        android:textSize="18sp"
+                                        android:gravity="center"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_PresentStatus"
+                                        android:layout_toRightOf="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_185sdp"
+                                        android:layout_height="@dimen/_50sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="Present Status"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_PI1"
+                                        android:layout_toRightOf="@+id/tv_OutletStatus"
+                                        android:layout_below="@+id/tv_PresentStatus"
+                                        android:layout_width="@dimen/_61sdp"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout"
+                                        android:text="PCI"
+                                        android:textSize="18sp"
+                                        android:gravity="center"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_KO1"
+                                        android:layout_toRightOf="@+id/tv_PI1"
+                                        android:layout_below="@+id/tv_PresentStatus"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:background="@drawable/ic_crf_custom_border_layout"
+                                        android:text="CCX"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_Mix1"
+                                        android:layout_toRightOf="@+id/tv_KO1"
+                                        android:layout_below="@+id/tv_PresentStatus"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="MIX"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_Volume"
+                                        android:layout_below="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_100sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="Volume" />
+
+                                    <TextView
+                                        android:id="@+id/tv_CoolerSize"
+                                        android:layout_below="@+id/tv_Volume"
+                                        android:layout_width="@dimen/_100sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="Cooler Size" />
+
+                                    <TextView
+                                        android:id="@+id/tv_NightGuard"
+                                        android:layout_below="@+id/tv_CoolerSize"
+                                        android:layout_width="@dimen/_100sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="Night Guard" />
+
+                                    <TextView
+                                        android:id="@+id/tv_GlassInCS"
+                                        android:layout_below="@+id/tv_NightGuard"
+                                        android:layout_width="@dimen/_100sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:textSize="18sp"
+                                        android:text="Glass in C/S" />
+
+                                    <EditText
+                                        android:id="@+id/input_pre_pi_volume"
+                                        android:layout_toRightOf="@+id/tv_OutletStatus"
+                                        android:layout_below="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_61sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""
+                                        android:inputType="number"
+                                        android:gravity="center"/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_ko_volume"
+                                        android:layout_toRightOf="@+id/input_pre_pi_volume"
+                                        android:layout_below="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_mix_volume"
+                                        android:layout_toRightOf="@+id/input_pre_ko_volume"
+                                        android:layout_below="@+id/tv_OutletStatus"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:text=""/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_pi_cooler_size"
+                                        android:layout_toRightOf="@+id/tv_CoolerSize"
+                                        android:layout_below="@+id/tv_Volume"
+                                        android:layout_width="@dimen/_61sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""
+                                        android:gravity="center"/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_ko_cooler_size"
+                                        android:layout_toRightOf="@+id/input_pre_pi_cooler_size"
+                                        android:layout_below="@+id/tv_Volume"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_mix_cooler_size"
+                                        android:layout_toRightOf="@+id/input_pre_ko_cooler_size"
+                                        android:layout_below="@+id/tv_Volume"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:text=""/>
+
+                                    <LinearLayout
+                                        android:id="@+id/linearLayout1"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:layout_below="@+id/tv_CoolerSize"
+                                        android:layout_toRightOf="@id/tv_NightGuard"
+                                        android:layout_width="@dimen/_61sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center">
+
+                                        <CheckBox
+                                            android:id="@+id/chk_pre_pi_volume"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linearLayout2"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:layout_below="@+id/tv_CoolerSize"
+                                        android:layout_toRightOf="@id/linearLayout1"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center">
+
+                                        <CheckBox
+                                            android:id="@+id/chk_pre_ko_volume"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linearLayout3"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:layout_below="@+id/tv_CoolerSize"
+                                        android:layout_toRightOf="@id/linearLayout2"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center">
+
+                                        <CheckBox
+                                            android:id="@+id/chk_pre_mix_volume"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content" />
+
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_pi_glasses"
+                                        android:layout_toRightOf="@+id/tv_GlassInCS"
+                                        android:layout_below="@+id/tv_NightGuard"
+                                        android:layout_width="@dimen/_61sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""
+                                        android:inputType="number"
+                                        android:gravity="center"/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_ko_glasses"
+                                        android:layout_toRightOf="@+id/input_pre_pi_glasses"
+                                        android:layout_below="@+id/tv_NightGuard"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:text=""/>
+
+                                    <EditText
+                                        android:id="@+id/input_pre_mix_glasses"
+                                        android:layout_toRightOf="@+id/input_pre_ko_glasses"
+                                        android:layout_below="@+id/tv_NightGuard"
+                                        android:layout_width="@dimen/_62sdp"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:background="@drawable/ic_crf_custom_border_layout_two"
+                                        android:gravity="center"
+                                        android:inputType="number"
+                                        android:text=""/>
+
+                                </RelativeLayout>
+
+                            </HorizontalScrollView>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="10dp"
+                            android:weightSum="5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/input_layout_serial_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/inputAssetSerialNo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Asset Serial Number"
+                                    android:inputType="number" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <ImageView
+                                android:id="@+id/btnScan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_weight="4"
+                                android:src="@drawable/ic_action_qr_code_red" />
+
+                        </LinearLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/input_layout_remarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <EditText
+                                android:id="@+id/inputRemarks"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Remarks"
+                                android:maxLines="5" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/ic_action_submit_button_selector"
+                            android:paddingLeft="50dp"
+                            android:paddingRight="50dp"
+                            android:text="Submit"
+                            android:textColor="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Audit History"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <FrameLayout
+                                android:id="@+id/frmlAudittHistoryList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp">
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TableLayout
+                                        android:id="@+id/tblAuditHistory"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"/>
+
+                                </HorizontalScrollView>
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_action_return" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

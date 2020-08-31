@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="google_app_id">192108019967</string>
+
+    <string name="app_name">SFA</string>
+
+    <!-- Navigation Drawer -->
+
+    <string name="drawer_open" id="Home">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="nav_item_home" > హోమ్ </string>
+    <string name="nav_item_outlet_list">ఔట్లెట్ జాబితా </string>
+    <string name="nav_item_order_history">నేటి ఆర్డర్లు</string>
+    <string name="nav_item_delivery_list">డెలివరీ జాబితాలు</string>
+    <string name="nav_item_discount_list">డిస్కౌంట్ </string>
+    <string name="nav_item_schemes_list">స్కీమ్స్ </string>
+    <string name="nav_item_outlet_registration">కొత్త ఔట్లెట్ నమోదు</string>
+    <string name="nav_item_planogram">ప్లానోగ్రామ్ </string>
+    <string name="nav_item_check_asset">కూలర్ తనిఖీ           </string>
+    <string name="nav_item_new_outlet_list">కొత్త ఔట్లెట్ జాబితా</string>
+    <string name="nav_item_asset_info">కూలర్  సమాచారం</string>
+    <string name="nav_item_day_summary">రోజువారీ ఆర్డర్ వివరాలు</string>
+    <string name="nav_item_psr_day_summary">PSR రోజువారీ ఆర్డర్ వివరాలు </string>
+    <string name="nav_item_stock_upload">Stock upload</string>
+
+    <string-array name="nav_drawer_labels">
+
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_outlet_list</item>
+        <item>@string/nav_item_delivery_list</item>
+        <item>@string/nav_item_order_history</item>
+        <item>@string/nav_item_schemes_list</item>
+        <item>@string/nav_item_outlet_registration</item>
+
+    </string-array>
+
+    <string name="title_home"> హోమ్ </string>
+    <string name="title_outlet_list">ఔట్లెట్ జాబితా</string>
+    <string name="title_order_history">నేటి ఆర్డర్లు</string>
+    <string name="title_delivery_list">డెలివరీ జాబితాలు</string>
+    <string name="title_sku_list">SKU జాబితా</string>
+    <string name="title_discount_list">డిస్కౌంట్</string>
+    <string name="title_scheme_list">స్కీమ్స్  </string>
+    <string name="title_outlet_registration">కొత్త ఔట్లెట్ నమోదు </string>
+    <string name="title_complaint_registration">ఫిర్యాదు నమోదు </string>
+    <string name="title_book_order">ఆర్డర్ బుకింగ్</string>
+    <string name="title_dashboard"></string>
+    <string name="title_order_summary">ఆర్డర్ సారాంశం</string>
+    <string name="title_about">గురించి</string>
+    <string name="title_asset_complaint">కూలర్ ఫిర్యాదు</string>
+    <string name="title_asset_audit">కూలర్  ఆడిట్ ఫారం</string>
+    <string name="title_planogram">ప్లానోగ్రామ్</string>
+    <string name="title_check_asset">కూలర్ తనిఖీ          </string>
+    <string name="title_pullout_form">కూలర్ ఉపసంహరించు</string>
+    <string name="title_asset_request">కూలర్ అభ్యర్థన</string>
+    <string name="title_new_outlet_list">కొత్త  ఔట్లెట్ జాబితా</string>
+    <string name="title_asset_info">కూలర్ సమాచారం</string>
+    <string name="title_day_summary">రోజువారీ ఆర్డర్ వివరాలు</string>
+    <string name="title_customer_returns">వినియోగదారుడు  వాపసులు</string>
+    <string name="title_psr_day_summary">PSR రోజువారీ ఆర్డర్ వివరాలు</string>
+
+    <!-- Navigation Drawer -->
+
+    <!-- Menu -->
+
+    <string name="action_settings">సెట్టింగ్స్</string>
+    <string name="action_search">శోధన</string>
+    <string name="action_logout">లాగౌట్ </string>
+    <string name="action_about">మరిన్ని వివరాలు </string>
+    <string name="ic_action_brand_spinner">బ్రాండ్ జాబితా</string>
+    <string name="ic_action_pack_spinner">ప్యాక్ జాబితా</string>
+    <string name="ic_action_lang_spinner">భాషలు </string>
+    <!-- Menu -->
+
+    <!-- Splash Screen -->
+
+    <string name="splash_txt_powered_by">Powered By</string>
+    <string name="splash_txt_inventrax_site">www.inventrax.com</string>
+
+    <!-- Splash Screen -->
+
+    <!-- Login Screen -->
+
+    <string name="hint_user_id">యూజర్ ఐ.డి</string>
+    <string name="hint_password">పాస్వర్డ్ </string>
+
+    <string name="err_msg_user_id">సరైన యూజర్ ఐ.డి ని నమోదు చెయ్యండి </string>
+    <string name="err_msg_password">సరైన పాస్వర్డ్ ని నమోదు చెయ్యండి </string>
+
+    <string name="login_chk_remember_password">పాస్వర్డ్ గుర్తుంచుకోండి </string>
+    <string name="login_sign_in_button_text">లాగిన్ </string>
+
+    <!-- Login Screen -->
+
+    <!-- Dashboard -->
+
+    <!-- Dashboard -->
+
+
+    <!-- Outlet List -->
+
+    <string name="outlet_list_recycler_empty_view">ఔట్లెట్ అందుబాటులో లేదు </string>
+
+    <string name="filter_array_book_order">ఆర్డర్ బుకింగ్</string>
+    <string name="filter_array_order_history">ఆర్డర్  హిస్టరీ </string>
+    <string name="filter_array_delivery_list">డెలివరీ  జాబితా </string>
+
+    <string-array name="outlet_order_filter_array">
+        <item>@string/filter_array_book_order</item>
+        <item>@string/filter_array_order_history</item>
+        <item>@string/filter_array_delivery_list</item>
+    </string-array>
+
+    <!-- Outlet List -->
+
+
+    <!-- Order History -->
+
+    <string name="order_history_list_recycler_empty_view">ఆర్డర్ అందుబాటులో లేదు </string>
+
+    <!-- Order History -->
+
+
+    <!-- Delivery List -->
+
+    <string name="delivery_list_recycler_empty_view">డెలివరీ అందుబాటులో లేదు </string>
+
+    <string-array name="array_bank_list">
+        <item>Select Bank</item>
+        <item>స్టేట్  బ్యాంకు  అఫ్  ఇండియా  </item>
+        <item>స్టేట్  బ్యాంకు  అఫ్  పాటియాలా </item>
+        <item>స్టేట్  బ్యాంకు  అఫ్   మైసూర్</item>
+        <item>స్టేట్  బ్యాంకు  అఫ్  ట్రావంకోర్ </item>
+        <item>స్టేట్  బ్యాంకు  అఫ్  బికానెర్  అండ్  జైపూర్</item>
+        <item>స్టేట్  బ్యాంకు  అఫ్  హైదరాబాద్ </item>
+        <item>అలాహాబాద్  బ్యాంకు</item>
+        <item>ఆంధ్ర  బ్యాంకు</item>
+        <item>బ్యాంకు  అఫ్  బరోడా   </item>
+        <item>బ్యాంకు  అఫ్  ఇండియా </item>
+        <item>బ్యాంకు  అఫ్  మహారాష్ట్ర </item>
+        <item>కెనరా  బ్యాంకు</item>
+        <item>సెంట్రల్  బ్యాంకు  అఫ్  ఇండియా </item>
+        <item>కార్పొరేషన్  బ్యాంకు</item>
+        <item>దేనా  బ్యాంకు  </item>
+        <item>ఇండియన్  బ్యాంకు </item>
+        <item>ఇండియన్  ఓవర్సీస్  బ్యాంకు </item>
+        <item>ఓరియంటల్  బ్యాంకు  అఫ్  కామర్స్ </item>
+        <item>పంజాబ్  &amp; సింద్  బ్యాంకు  </item>
+        <item>పంజాబ్  నేషనల్  బ్యాంకు </item>
+        <item>సిండికేట్  బ్యాంకు </item>
+        <item>UCO బ్యాంకు </item>
+        <item>యూనియన్  బ్యాంకు  అఫ్  ఇండియా </item>
+        <item>యునైటెడ్  బ్యాంకు  అఫ్  ఇండియా </item>
+        <item>విజయ  బ్యాంకు </item>
+        <item>IDBI బ్యాంకు </item>
+        <item>భారతీయ  మహిళా  బ్యాంకు [2]</item>
+
+    </string-array>
+
+    <!-- Delivery List -->
+
+
+    <!-- SKU List -->
+    <string name="sku_list_recycler_empty_view">SKU అందుబాటులో లేదు </string>
+    <string name="sku_list_bnt_cart">జతచేయు </string>
+
+    <string name="sku_list_txt_bottle_quantity_hint">బాటిల్స్ </string>
+    <string name="sku_list_txt_case_quantity_hint"> కేసులు </string>
+
+    <string name="sku_list_btn_checkout_text">చెక్ అవుట్ </string>
+
+
+    <string-array name="array_item_uom">
+        <item>EA</item>
+        <item>Case / 24 </item>
+        <item>Pack / 12 </item>
+        <item>Box / 9 </item>
+    </string-array>
+
+    <!-- SKU List -->
+
+
+    <!-- Discounts -->
+    <string name="discount_list_recycler_empty_view">డిస్కౌంట్ అందుబాటులో లేదు </string>
+    <!-- Discounts -->
+
+
+    <!-- Outlet Registration -->
+
+    <!-- Outlet Registration -->
+
+
+    <!-- Complaint Registration -->
+
+    <!-- Complaint Registration -->
+
+
+    <!-- Order Booking -->
+
+    <!-- Order Booking -->
+
+    <!-- Order Summary -->
+
+    <string name="order_summary_footer_button_confirm_order">ఆర్డర్ నిర్ధారించుము </string>
+
+    <!-- Order Summary -->
+
+    <!-- Item List -->
+
+    <string name="item_list_recycler_empty_view">SKU అందుబాటులో లేదు </string>
+
+    <!-- Item List -->
+
+
+    <!-- About -->
+
+    <string name="fragment_about_txt_copy_right">Copyright © 2016 Inventrax, All rights reserved.</string>
+    <string name="fragment_about_txt_inventrax_link">www.inventrax.com</string>
+    <string name="fragment_about_txt_version">వర్షన్  :</string>
+    <string name="fragment_about_txt_visit">విజిట్  :</string>
+
+    <!-- About -->
+
+
+    <!-- Global String Values -->
+
+    <string name="ChannelCode">ఛానల్  కోడ్ </string>
+    <string name="LandMark">ల్యాండ్  మార్క్ </string>
+    <string name="AccountType">ఖాతా రకం </string>
+    <string name="OutletName">ఔట్లెట్  పేరు </string>
+    <string name="PhoneNumber">ఫోన్  నెంబర్ </string>
+    <string name="OutletCode">ఔట్లెట్  కోడ్ </string>
+    <string name="OrderNumber">ఆర్డర్  నెంబర్ </string>
+    <string name="OrderDate">ఆర్డర్  తారీఖు </string>
+    <string name="OrderValue">ఆర్డర్  విలువ </string>
+    <string name="BrandName">బ్రాండ్  పేరు </string>
+    <string name="BrandPackName">బ్రాండ్  ప్యాక్  పేరు </string>
+    <string name="MRP">ఎమ్.ఆర్.పి </string>
+    <string name="Discount">డిస్కౌంట్ </string>
+    <string name="AvailableStock">అందుబాటులో ఉన్న స్టాక్ </string>
+    <string name="OutletType">ఔట్లెట్ రకం </string>
+    <string name="DiscountInfo">డిస్కౌంట్  సమాచారం</string>
+    <string name="RouteCode">రూట్  కోడ్  </string>
+    <string name="OwnerName">ఓనర్  పేరు </string>
+    <string name="PaymentMode">చెల్లింపు రకం </string>
+    <string name="Cash">కాష్ </string>
+    <string name="Cheque">చెక్ </string>
+    <string name="Receive">స్వీకరించండి</string>
+    <string name="number_of_cases">కేసుల సంఖ్య </string>
+    <string name="number_of_bottles">బాటిల్స్  సంఖ్య </string>
+    <string name="Cases">కేసులు </string>
+    <string name="Bottles">బాటిల్స్ </string>
+    <string name="ChequeNumber">చెక్  నెంబర్ </string>
+    <string name="TradePrice">ట్రేడ్ </string>
+    <string name="DiscountCode">డిస్కౌంట్  కోడ్ </string>
+    <string name="DiscountName">డిస్కౌంట్  పేరు </string>
+    <string name="DiscountType">డిస్కౌంట్  రకం </string>
+    <string name="DiscountValue">డిస్కౌంట్  విలువ </string>
+    <string name="TargetItem">టార్గెట్ ఐటమ్</string>
+    <string name="OfferItem">ఆఫర్ ఐటమ్ </string>
+    <string name="SchemeCode">స్కీం  కోడ్ </string>
+    <string name="SchemeName">స్కీం  పేరు </string>
+    <string name="SchemeDescription">స్కీం  వివరణ</string>
+    <string name="Validity">చెల్లుబాటు</string>
+    <string name="Address">అడ్రస్ </string>
+    <string name="Quantity">పరిమాణం</string>
+    <string name="Scheme">స్కీం </string>
+    <string name="CustomerOperations">ఔట్లెట్  ఆపరేషన్స్ </string>
+    <string name="BookOrder">ఆర్డర్ బుకింగ్</string>
+    <string name="OrderDetails">ఆర్డర్  వివరణ </string>
+    <string name="Rs">\u20B9</string>
+    <string name="Route">రూట్  :</string>
+    <string name="CheckIn">చెక్-ఇన్ </string>
+    <string name="Brand">బ్రాండ్  :</string>
+    <string name="Pack">ప్యాక్  :</string>
+    <string name="Crates">క్రాట్స్ </string>
+    <string name="InvoiceNumber">ఇన్వాయిస్  నెంబర్ </string>
+    <string name="StockDetails">సరకు వివరాలు</string>
+    <string name="OrderType">ఆర్డర్  రకం </string>
+    <string name="OrderStatus">ఆర్డర్  స్థితి </string>
+    <string name="Add">జత చేయు</string>
+    <string name="Pleaseenterquantity">Please enter quantity</string>
+    <string name="Receives">నగదు తీసుకోబడినది </string>
+    <string name="Receivecheque">చెక్ తీసుకోబడినది </string>
+
+
+    <!-- Global String Values -->
+
+    <string-array name="array_complaint_type">
+        <item>కంప్లైంట్ రకమును  ఎంచుకోండి </item>
+        <item>కూలర్ పని చేయుటలేదు </item>
+        <item>కూలింగ్ తక్కువగా అవుతున్నది </item>
+        <item>ట్యూబెలైట్  సరిగా పని చేయుట లేదు </item>
+        <item>అర తుప్పుపట్టినది </item>
+        <item>ఫ్రంట్ కవరు లేదు </item>
+        <item>వీల్స్  సమస్యగా ఉన్నవి </item>
+        <item>కూలర్ డికాల్స్ </item>
+        <item>గ్లాస్  డోర్  విరిగిపోయినది </item>
+        <item>డోర్  సీల్   సమస్యగ ఉన్నది </item>
+        <item>క్రోన్ కలెక్టర్ </item>
+        <item>క్రోన్  ఓపెనర్ </item>
+        <item>డోర్  హేండిల్ </item>
+        <item>కానోపి  విరిగిపోయినది </item>
+        <item>కూలర్ తుప్పుపట్టినది </item>
+    </string-array>
+    <string-array name="array_languages">
+    <item>తెలుగు </item>
+    <item>English</item>
+    <item>Hindi</item>
+    </string-array>
+    <string-array name="array_cooler_capacity">
+        <item>వాల్యూంను  ఎంచుకోండి  </item>
+        <!--<item>50L EBC</item>-->
+        <item>65L</item>
+        <item>70L</item>
+        <item>100L EBC</item>
+        <item>110L</item>
+        <item>120L</item>
+        <item>125L EBC</item>
+        <item>165L</item>
+        <item>175L</item>
+        <item>200L EBC</item>
+        <item>220L</item>
+        <item>280L</item>
+        <item>320L</item>
+        <item>350L</item>
+        <item>400L</item>
+        <item>425L</item>
+        <item>450L</item>
+        <item>550L</item>
+        <item>600L</item>
+        <item>650L</item>
+        <item>1000L</item>
+
+    </string-array>
+
+    <string-array name="array_asset_make">
+        <item>అసెట్ తయారీని ఎంచుకోండి </item>
+        <item>Western</item>
+        <item>Everest</item>
+        <item>Allwyn</item>
+        <item>Carrier</item>
+        <item>Rockwell</item>
+        <item>Seaga</item>
+        <item>Voltas</item>
+        <item>Godrej</item>
+    </string-array>
+
+    <string name="error_kiosk_mode">ఊహించని కారణాల వాళ్ళ KIOSK మోడ్ పనిచేయుటలేదు  </string>
+
+    <string name="elm_key">5D92A4D8D897A039DCF4FBEBE1558178077BF0694B1AE8CAB76541485DBD1D66D7DCE34B619A135B0D498EF21074CE5DA246473B12ACC9BD7AFB671ADAC0CBBA</string>
+
+    <string name="device_administration">డివైస్ అడ్మినిస్ట్రేషన్ </string>
+    <string name="enable_admin">అడ్మిన్ ఆదేశాలను అమలుచేయు  </string>
+
+
+    <string-array name="channelArray">
+
+        <item>ఛానల్ ని ఎంచుకోండి </item>
+        <item>Convenience</item>
+        <item>Grocery</item>
+        <item>Eateries</item>
+        <item>Transport</item>
+        <item>Leisure/Entertainment</item>
+        <item>Institution</item>
+        <item>Wholesale/Retail</item>
+        <item>On Premise</item>
+        <item>Bar</item>
+        <item>Modern Trade</item>
+        <item>Opportunity</item>
+    </string-array>
+
+
+    <string-array name="array_asset_pullout_reasons">
+
+        <item>సరిఅయిన కారణమును ఎంచుకోండి </item>
+        <item>అమ్మకాలు తక్కువగా ఉన్నవి </item>
+        <item>ఔట్లెట్ మూసివేయబడినది </item>
+        <item>కూలర్ భర్తీచేయుట </item>
+        <item>అసెట్ దెబ్బతిన్నది </item>
+
+    </string-array>
+
+
+    <!-- Outlet Registration -->
+
+
+    <string name="outlet_code">ఔట్లెట్  కోడ్ </string>
+    <string name="outlet_name">ఔట్లెట్ పేరు</string>
+    <string name="owner_name">ఓనర్ పేరు</string>
+    <string name="channel_type">ఛానల్ రకం</string>
+    <string name="account_type">అకౌంట్ రకం</string>
+    <string name="outlet_type">ఔట్లెట్ రకం</string>
+    <string name="payment_mode">చెల్లింపు రకం</string>
+    <string name="email">ఇమెయిల్ </string>
+    <string name="door_number">డోర్ నెంబర్ </string>
+    <string name="land_mark">లాండ్మార్క్</string>
+    <string name="address">చిరునామా</string>
+    <string name="pin_code">పిన్ కోడ్</string>
+    <string name="tin_number">టిన్ నెంబర్</string>
+    <string name="aadhar_number">ఆధార్ నెంబర్</string>
+    <string name="res_acra_toast_text">మళ్ళి తిరిగి లాగిన్ అవ్వండి </string>
+
+
+    <!-- Outlet Registration -->
+    <string name="message">మీ అప్లికేషన్ తెలుగు లోకి మారబడినది  </string>
+    <!--Home page text fields-->
+    <string name="Scheduled_Calls">షెడ్యూల్డ్ కాల్స్   </string>
+    <string name="Completed_Calls">పూర్తిఅయిన కాల్స్       </string>
+    <string name="percentage_of_Call_Completion">పూర్తిఅయిన కాల్స్ %</string>
+    <string name="strikecalls">స్ట్రైక్ కాల్స్ </string>
+    <string name="strikerate">స్ట్రైక్ రేట్ </string>
+    <string name="LineSales_Call">లైన్స్/సేల్స్ కాల్ </string>
+    <string name="Total_calls_made">చేసిన మొత్తం కాల్స్</string>
+    <string name="Sales_Cases">సేల్స్ (కేసెస్)</string>
+    <string name="Drop_Size">డ్రాప్ పరిమాణం</string>
+    <string name="Total_Lines_Sold">మొత్తం అమ్మిన పంక్తులు</string>
+    <string name="Current_Outlet">ప్రస్తుత ఔట్లెట్  </string>
+    <string name="Next_Outlet">తరవాత ఔట్లెట్ </string>
+    <string name="MTD">ఎం టి డి</string>
+    <string name="AOP">ఏ ఓ పి</string>
+    <string name="Achieved">పొందుట</string>
+    <string name="RR">ఆర్ ఆర్</string>
+    <string name="CR">సి ఆర్</string>
+    <string name="YTD_Month">వై టి డి (నెల) </string>
+    <string name="Run_Rate">రన్ రేట్ </string>
+    <string name="Sales">సేల్స్ </string>
+    <string name="Volume">వాల్యూమ్</string>
+    <string name="Current_Run_Rate">ప్రస్తుత రన్ రేట్</string>
+    <string name="Required_Run_Rate">Required Run Rate</string>
+    <string name="Route_Name">రూట్ పేరు </string>
+    <!--Outlet List-->
+    <string name="Outlet_Code">ఔట్లెట్ కోడ్ </string>
+    <string name="Outlet_Name">ఔట్లెట్ పేరు </string>
+    <string name="Pepsi">పెప్సీ </string>
+    <string name="Up">7అప్ </string>
+    <string name="Mirinda">మిరిండా </string>
+    <string name="Diet_Pepsi">డైట్ పెప్సీ </string>
+    <string name="Mountain_Dew">మౌంటెన్ డ్యూ   </string>
+    <string name="Revive">రివైవ్ </string>
+    <string name="Slice">స్లైస్ </string>
+    <string name="Nimbooz">నింబూజ్</string>
+    <string name="Lehar_Soda">లెహర్ సోడా </string>
+    <string name="Aquafina">ఆక్వాఫిన </string>
+    <string name="Total">మొత్తం -  </string>
+    <string name="PCI"> పిసిఐ - </string>
+    <string name="CCX">సిసిఎక్స్   - </string>
+    <string name="MIX">మిక్స్  - </string>
+    <string name="Key_Outlet">కీ ఔట్లెట్</string>
+    <string name="Grocery">గ్రోసరీ </string>
+    <string name="Outlet_Status">ఔట్లెట్ స్థితి </string>
+    <string name="Present_Status">ప్రస్తుత స్థితి</string>
+    <string name="nohistory">వివరాలు అందుబాటులో లేవు </string>
+    <!--Print-->
+    <string name="Print">ప్రింట్ </string>
+    <!--About-->
+    <string name="HelpLineNumber">హెల్ప్  లైన్  నెంబర్  : 8333858060</string>
+    <string name="User_Manual">యూజర్ మ్యానువల్ </string>
+    <string name="Check_Update"> చెక్  అప్డేట్</string>
+    <!--Asset -->
+    <string name="Cooler_Size">కూలర్ సైజు </string>
+    <string name="Night_Guard">నైట్  గార్డ్ </string>
+    <string name="Glass">గ్లాస్ ఇన్ సి/యస్ </string>
+    <string name="AssetSerialNumber">అసెట్  సీరియల్ నెంబర్ </string>
+    <string name="Remarks">వ్యాఖ్యలు</string>
+    <string name="Submit">కొనసాగించు</string>
+    <string name="Audit_History">ఆడిట్ హిస్టరీ </string>
+    <string name="NoSerialNumberOnAsset">అసెట్ యొక్క  సీరియల్ నెంబర్ లేదు </string>
+    <string name="Hasnightguard">నైట్  గార్డ్ ఉంది </string>
+    <string name="CoolerType">కూలర్ రకం  :</string>
+    <string name="VISI">విసి </string>
+    <string name="EBC">ఇబిసి </string>
+    <string name="QRCode">QR కోడ్ </string>
+    <string name="AssetMake">అసెట్ తయారు </string>
+    <string name="AssetVolume">అసెట్ వాల్యూం </string>
+    <string name="pepsiserialno">పెప్సీ  సీరియల్  నెంబర్ </string>
+    <string name="oemserialno">OEM సీరియల్ నెంబర్ </string>
+    <string name="Delete">తొలగించు</string>
+    <string name="CaptureAssetPicture">అసెట్ చిత్రాన్ని సంగ్రహించు </string>
+    <string name="Cancel">రద్దు చేయు </string>
+    <string name="ProposedStatus">ప్రతిపాదిత స్థితి</string>
+    <string name="ScanAssetSerialNumber">అసెట్ సీరియల్ నెంబర్ ని స్కాన్ చెయ్యండి </string>
+    <string name="Check_Asset">చెక్ అసెట్ </string>
+    <string name="Asset_Details">అసెట్ వివరాలు  :</string>
+    <string name="InstalledBy">ఇనిస్టాల్ బై </string>
+    <string name="Installeddate">ఇనిస్టాల్ రోజు </string>
+    <string name="AssetType">అసెట్ రకం </string>
+    <string name="ComplaintType">కంప్లైంట్ రకం </string>
+    <string name="ComplaintHistory">కంప్లైంట్ హిస్టరీ </string>
+    <string name="CrownValue">క్రౌన్ విలువ</string>
+    <string name="CreditAmount">క్రౌన్ ధర </string>
+    <string name="TotalOrdervalue">మొత్తము ఆర్డర్ విలువ   </string>
+    <string name="TotalOrderQuantity">మొత్తము ఆర్డర్ పరిమాణము </string>
+    <string name="TotalCashCollected">వసూళ్లు ఆయన మొత్తము </string>
+    <string name="NoofCrates">డబ్బాలు సంఖ్య </string>
+    <string name="NoofEmpties">ఖాళీ డబ్బాలు సంఖ్య </string>
+    <string name="Fulls">ఫుల్స్ </string>
+    <string name="RequestforSettlement">సెటిల్మెంట్ కొరకు అభ్యర్థన చేయండి</string>
+    <string name="Bank">బ్యాంకు  :</string>
+    <string name="AddMore">మరికొన్ని జత చేయండి  </string>
+    <string name="General">సాధారణ ఔట్లెట్ </string>
+    <string name="Key">కీ ఔట్లెట్ </string>
+    <string name="IsaDisplayAccount">ప్రదర్శన ఖాతా</string>
+    <string name="dialoguemessage">చెక్ అవుట్ చేద్దము అనుకుంటున్నారా? </string>
+    <string name="Yes">అవును </string>
+    <string name="NO">కాదు  </string>
+    <string name="UnitPrice">యూనిట్ ధర </string>
+    <string name="confirmordermessage"> ఆర్డర్ నిర్ధారీర్ధాము  అనుకుంటున్నారా?</string>
+    <string name="orderdialogmessage">ఆర్డరు ను తొలగిద్దాము అనుకుంటున్నారా?</string>
+    <string name="PayableAmount">చెల్లించవలసిన మొత్తం</string>
+    <string name="OrderCreatedSuccessfully">ఆర్డర్ విజయవంతంగా నిర్ధారించబడింది</string>
+    <string name="Confirm_Order">ఆర్డరును నిర్ధారించండి</string>
+    <string name="Items"> ఐటమ్స్ </string>
+    <string name="Item">ఐటమ్</string>
+    <string name="TotalOrdersValue">మొత్తము ఆర్డరు విలువ :</string>
+    <string name="MobileNumber1">మొబైల్ నెంబర్1</string>
+    <string name="MobileNumber2">మొబైల్ నెంబర్2</string>
+    <string name="IsPetSelling">పెట్ బాటిల్స్ అమ్మకం </string>
+    <string name="IsaCreditAccount">అరువు ఖాతా </string>
+    <string name="CaptureOutletPicture">ఔట్లెట్ చిత్రాన్ని తీయండి </string>
+    <string name="CoolerCapacity">కూలర్ సామర్థ్యం</string>
+    <string name="LastAuditDetails">గతంలో ఆడిట్ చేయబడ్డ వివరాలు:</string>
+    <string name="AuditHistory">ఆడిట్ వివరాలు</string>
+    <string name="MachineStatus">మెషిన్ ప్రస్తుత స్థితి</string>
+    <string name="Working">పని చేయుచున్నది </string>
+    <string name="NotWorking">పని చేయుటలేదు </string>
+    <string name="Scrap">ముక్కలయింది</string>
+    <string name="PulloutReason">ఫుల్లౌట్ చేయుటకు కారణము</string>
+    <string name="serialno">వరుస సంఖ్య</string>
+    <string name="status">హోదా</string>
+    <string name="ComplainDate">కంప్లైంట్ రోజు </string>
+    <string name="Customercode">వినియోగదారుని కోడ్ </string>
+    <string name="AuditDate">ఆడిట్ రోజు </string>
+    <string name="LastAuditDate">గత ఆడిట్ రోజు </string>
+    <string name="checkoutmessage">మీరు విజయ వంతముగా చెక్ అవుట్ చేయబడ్డారు </string>
+    <string name="Model">మోడల్ </string>
+    <string name="Make">ఆకారము </string>
+    <string name="PepsiSerialNo">పెప్సీ వరుస  సంఖ్య.</string>
+    <string name="OEMNo">OEM సంఖ్య .</string>
+    <string name="Loadingmessage">దయచేసి వేచివుండండి </string>
+    <string name="internetenablemessage">ఇంటర్నెట్ ను అనుసందానుమ్ చేయండి </string>
+    <string name="OrderSKU">ఆర్డర్ SKU : [ </string>
+    <string name="OfferSKU"> ఆఫర్ SKU : [ </string>
+    <string name="Schemes">స్కీం : </string>
+    <string name="Assets">అసెట్లు  [ </string>
+    <string name="OrderSKUs">ఆర్డర్ SKU</string>
+    <string name="OrderQty"> ఆర్డర్ పరిమాణము </string>
+    <string name="OfferSKUss"> ఆఫర్ SKU </string>
+    <string name="OfferQty">ఆఫర్ పరిణామము </string>
+    <string name="withsemicolumnmrp">ఎమ్.ఆర్.పి : </string>
+    <string name="SchemeDiscount">స్కీం / డిస్కౌంట్ :</string>
+    <string name="ValidFrom">ఆఫర్ అమలు తేదీ </string>
+    <string name="to"> - </string>
+    <string name="Pleaseupdatedeliverystatus">దయచేసి డెలివరీ స్థితి ని అప్ డేట్ చేయండి    </string>
+    <string name="Checking">చెకింగ్ </string>
+    <string name="Errorwhilecheckingupdate">చెకింగ్ అప్ డేట్ లో లోపము ఉన్నది</string>
+    <string name="Pleasescanvalidserialnumber">సరి ఆయన సీరియల్ నెంబర్ ను స్కాన్ చెయ్యండి </string>
+    <string name="AuditInfoUpdatedSuccessfully">ఆడిట్ సమాచారం విజయవంతముగా అప్ డేట్ చేయబడినది </string>
+    <string name="ComplaintInitiatedSuccessfully">కంప్లైంట్ విజయవంతముగా ప్రారంబించారు </string>
+    <string name="ScannedQRcodenotmappedtothiscustomer">స్కాన్ చేసిన QR కోడ్ ఈ కస్టమర్ ది కాదు </string>
+    <string name="Proposedcoolersizecannotbeempty">ప్రతిపాదిత కూలర్ సైజు ఖాళీగా ఉండకూడదు </string>
+    <string name="Assetrequestupdatedsuccessfully">అసెట్ అభ్యర్థన విజయవంతముగా అప్ డేట్ చేయబడినది </string>
+    <string name="Errorwhileupdatingassetrequest">అసెట్ అభ్యర్థన లో లోపము ఉన్నది </string>
+    <string name="AssetNotTagged">అసెట్ ను టాగ్ చెయ్యండి </string>
+    <string name="SuccessfullyUpdated">విజయ వంతముగా అప్ డేట్ చేయబడినది </string>
+    <string name="InvalidResponse">చెల్లని స్పందన</string>
+    <string name="Salemessage">పరిష్కారం కొరకు సేల్ రోజు ను మూసి వేదం అనుకుంటున్నారా?</string>
+    <string name="Ordersmessage">ఇంటర్నెట్ కనెక్టివిటీ కోసం తనిఖీ చెయ్యండి ...</string>
+    <string name="Pleasecheckinternetconnectivity">ఇంటర్నెట్ కనెక్టివిటీ కోసం తనిఖీ చెయ్యండి</string>
+    <string name="Errorwhileloadingorderinformation">ఆర్డర్ సమాచారం లో లోపము ఉన్నది </string>
+    <string name="Pleaseselectpaymentmode">చెల్లింపు రకమును ఎంచుకోండి </string>
+    <string name="Pleaseentercash">రుసుమును నమోదు చెయ్యండి </string>
+    <string name="insufficientquantity">తగినంత పరిమాణం  లేదు </string>
+    <string name="orderupdated">ఆర్డర్ విజయవంతముగా అప్ డేట్ చేయబడినది </string>
+    <string name="InvalidOrder">ఆర్డర్ సరియైనది కాదు </string>
+    <string name="locationinformation">లొకేషన్ సమాచారం అందు బాటులో లేదు </string>
+    <string name="Errorwhilecheckingout">చెక్ అవుట్ లో లోపము ఉన్నది </string>
+    <string name="Errorwhilecheckin">చెక్-ఇన్ లో లోపము ఉన్నది </string>
+    <string name="Youhavesuccessfullycheckedin">మీరు విజయవంతముగా చెక్ - ఇన్ చేయబడ్డారు </string>
+    <string name="Errorwhileinitializingoutletlist">ఔట్లెట్ జాబితాలో లోపుము ఉన్నది </string>
+    <string name="depot">Depot</string>
+
+
+</resources>

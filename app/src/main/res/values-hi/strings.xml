@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="outlet_code">లెట్ కోడ్</string>
+    <string name="outlet_name">లెట్ పేరు</string>
+    <string name="owner_name">యజమాని పేరు</string>
+    <string name="channel_type">ఛానెల్ రకం</string>
+    <string name="account_type">ఖాతా రకం</string>
+    <string name="outlet_type">లెట్ టైప్</string>
+    <string name="payment_mode">చెల్లింపు రకం</string>
+    <string name="email">ఇమెయిల్</string>
+    <string name="door_number">డోర్ సంఖ్య</string>
+    <string name="land_mark">భూమి మార్క్</string>
+    <string name="address">చిరునామా</string>
+    <string name="pin_code">పిన్ కోడ్</string>
+    <string name="tin_number">టిన్ సంఖ్య</string>
+    <string name="depot">Depot</string>
+
+</resources>

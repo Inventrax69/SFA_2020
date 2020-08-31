@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="@dimen/_3sdp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginBottom="@dimen/_3sdp"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:layout_marginRight="@dimen/_15sdp"
+    android:layout_marginLeft="@dimen/_15sdp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_12sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:paddingTop="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/txtSchemeCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/SchemeCode"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            android:textColor="@color/color_in_process"
+            />
+
+        <TextView
+            android:id="@+id/txtSchemeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/SchemeName"
+            android:textSize="@dimen/_11sdp" />
+
+
+        <TextView
+            android:id="@+id/txtSchemeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtSchemeCode"
+            android:layout_below="@+id/txtSchemeCode"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/SchemeDescription"
+            android:textSize="@dimen/_11sdp" />
+
+        <TextView
+            android:id="@+id/txtValidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtSchemeDescription"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:text="@string/Validity"
+            android:textSize="@dimen/_11sdp" />
+
+
+
+        <FrameLayout
+            android:id="@+id/frmlSchemeList"
+            android:layout_below="@+id/txtValidity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"
+
+            >
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:id="@+id/tblSchemeDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    >
+
+                </TableLayout>
+
+            </HorizontalScrollView>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

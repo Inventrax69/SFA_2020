@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layoutBrandPackFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/txtStockInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_13sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:textColor="@color/white"
+                android:layout_weight="0.9"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Brand"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:textSize="@dimen/_13sdp"
+                android:layout_weight="0.7"/>
+
+            <Spinner
+                android:id="@+id/action_brand_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:spinnerMode="dialog"
+                android:layout_weight="1"></Spinner>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Pack"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_weight="0.7"/>
+
+            <Spinner
+                android:id="@+id/action_pack_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:spinnerMode="dialog"
+                android:layout_weight="0.6">
+
+            </Spinner>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_scheme_list_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_scheme_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_scheme_list_recycler_height"
+        android:layout_margin="@dimen/_3sdp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/txtEmptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="NoSchemeIsAvailable"
+        android:visibility="gone"/>
+
+</LinearLayout>

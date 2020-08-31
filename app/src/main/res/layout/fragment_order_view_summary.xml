@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layoutOrderSummaryHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8sdp"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:text="@string/OrderNumber"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:text=":"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtOrderNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutOrderSummaryItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutOrderSummaryHeader"
+        android:layout_above="@+id/layoutOrderSummaryFooter"
+        android:layout_marginBottom="@dimen/_73sdp"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_order_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_11sdp"
+            android:scrollbars="vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutOrderSummaryFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/_8sdp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:gravity="right"
+                    android:text="@string/Total"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/order_summary_footer_text_view_color" />
+
+                <TextView
+                    android:id="@+id/txtTotalAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:text="Rs. 0"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/order_summary_footer_text_view_color" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowQuantitySummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/txtCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="0 CASES"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@color/order_summary_footer_text_view_color" />
+
+                <TextView
+                    android:id="@+id/txtBottles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:text="0 BOTTLES"
+                    android:textSize="@dimen/order_summary_footer_text_view_size"
+                    android:textColor="@color/order_summary_footer_text_view_color" />
+
+                <TextView
+                    android:id="@+id/txtFrees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_12sdp"
+                    android:text="0 FREES"
+                    android:textSize="@dimen/order_summary_footer_text_view_size"
+                    android:textColor="@color/order_summary_footer_text_view_color" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowConfirmOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:visibility="gone"
+                >
+
+               <!-- <ImageButton
+                    android:id="@+id/imgButtonMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:background="@null"
+                    android:src="@drawable/ic_action_button_more" />-->
+
+                <Button
+                    android:id="@+id/btnConfirmOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_span="3"
+                    android:textSize="@dimen/_12sdp"
+                    android:background="@drawable/ic_action_checkout_button"
+                    android:text="@string/order_summary_footer_button_confirm_order"
+                    android:textColor="@color/white" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/snack_bar_action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/layoutOrderCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/_70sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabOrderModification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_cancel"
+            app:backgroundTint="@null"
+            android:background="@null"
+            android:layout_centerHorizontal="true"
+            app:fabSize="normal"/>
+
+        <TextView
+            android:id="@+id/txtOrderCancel"
+            android:layout_below="@+id/fabOrderModification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Cancel"
+            android:textColor="#e70f0f"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            android:background="@null"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

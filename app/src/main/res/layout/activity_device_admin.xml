@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/admin_license_activation_ll_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:padding="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_38sdp"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        >
+
+        <Button
+            android:id="@+id/btnEnableAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/branding_button_selector"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/enable_admin"
+            android:textColor="@drawable/branding_label_selector"
+            android:visibility="invisible"
+            />
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_83sdp">
+
+        </View>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pepsi_logo"
+        android:layout_centerVertical="true"
+        android:alpha="0.50"
+        />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/inventrax_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.50"
+        android:layout_marginBottom="@dimen/_7sdp"
+        />
+
+
+</RelativeLayout>

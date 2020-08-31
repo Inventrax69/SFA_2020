@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="@dimen/order_summary_items_row_card_corner_radius"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/order_summary_items_row_layout_padding">
+
+        <ImageView
+            android:id="@+id/imgSKUThumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/sku_list_img_thumbnail_margin_left"
+            android:layout_marginRight="@dimen/sku_list_img_thumbnail_margin_right"
+            android:src="@drawable/mtndew"
+            />
+
+        <TextView
+            android:id="@+id/txtProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imgSKUThumbnail"
+            android:text="Pepsi Pet 200ML"
+            android:textSize="@dimen/order_summary_recycler_text_view_product_name_size"
+            android:textColor="@color/order_summary_recycler_text_view_product_name_color"/>
+
+        <ImageButton
+            android:id="@+id/imgButtonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/txtProductName"
+            android:background="@null"
+            android:src="@drawable/ic_action_button_close"
+            android:visibility="gone"
+            />
+
+        <LinearLayout
+            android:id="@+id/layoutPriceDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtProductName"
+            android:layout_toRightOf="@+id/imgSKUThumbnail"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tableLayoutPriceDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:id="@+id/tableRowProductUnitPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_product_price_margin_top"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/UnitPrice"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/order_summary_items_layout_text_view_margin_left"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtProductUnitPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="Rs. 250"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowProductDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_product_discount_margin_top"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/txtDiscountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="@string/Discount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/order_summary_items_layout_text_view_margin_left"
+                        android:gravity="center"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text=":" />
+
+                    <TextView
+                        android:id="@+id/txtProductDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="- Rs. 50" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowProductScheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_product_discount_margin_top"
+                    android:gravity="right"
+                    android:visibility="gone"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/txtProductScheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:layout_span="3"
+                        android:singleLine="true"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowProductQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_product_quantity_margin_top"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="@string/Quantity" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/order_summary_items_layout_text_view_margin_left"
+                        android:gravity="center"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text=":" />
+
+
+                    <TextView
+                        android:id="@+id/txtProductQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="3 CASES   5 BOT" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_under_line_margin_top"
+                    android:gravity="right">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/order_summary_items_layout_under_line_view_height"
+                        android:layout_span="3"
+                        android:background="@color/colorControlNormal"></View>
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRowPayableAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/order_summary_items_layout_payable_amount_margin_top"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="@string/PayableAmount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/order_summary_items_layout_text_view_margin_left"
+                        android:gravity="center"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text=":" />
+
+                    <TextView
+                        android:id="@+id/txtPayableAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/order_summary_items_layout_payable_amount_text_view_margin_left"
+                        android:gravity="right"
+                        android:textSize="@dimen/order_summary_recycler_text_view_size"
+                        android:textColor="@color/order_summary_recycler_text_view_color"
+                        android:text="Rs. 2450" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+
+        <!--<LinearLayout
+            android:id="@+id/layoutPriceDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtItemBrandPack"
+            android:layout_toRightOf="@+id/imgSKUThumbnail"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutProductPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_summary_items_layout_product_price_margin_top"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Product Price" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_product_price_text_view_margin_left"
+                    android:gravity="right"
+                    android:text="Rs. 250" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutProductDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_summary_items_layout_product_discount_margin_top"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Discount" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_product_discount_text_view_margin_left"
+                    android:gravity="right"
+                    android:text="- Rs. 50" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutProductQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_summary_items_layout_product_quantity_margin_top"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="CASES" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_product_quantity_text_view_margin_left"
+                    android:gravity="right"
+                    android:text="X 3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_product_quantity_text_view_margin_left"
+                    android:gravity="left"
+                    android:text="BOT" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_product_quantity_text_view_margin_left"
+                    android:gravity="right"
+                    android:text="X 5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutUnderLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_summary_items_layout_under_line_margin_top"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/order_summary_items_layout_under_line_view_height"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_under_line_view_margin_left"
+                    android:background="@color/colorControlNormal"></View>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPayableAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/order_summary_items_layout_payable_amount_margin_top"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="Payable Amount" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/order_summary_items_layout_payable_amount_text_view_margin_left"
+                    android:gravity="right"
+                    android:text="Rs. 2450" />
+            </LinearLayout>
+
+        </LinearLayout>-->
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

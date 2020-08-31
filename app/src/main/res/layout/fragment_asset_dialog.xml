@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:orientation="vertical">
+
+
+    <CheckBox
+        android:id="@+id/chkNoSerialNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Serial Number On Asset" />
+
+    <CheckBox
+        android:id="@+id/chkHasNightGuard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Has night guard" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cooler Type : "
+                android:textSize="18sp"/>
+
+            <RadioGroup
+                android:id="@+id/rbgCoolerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbVISI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VISI"
+                    android:checked="true"
+                    />
+
+                <RadioButton
+                    android:id="@+id/rbEBC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="EBC" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_qr_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/inputQRCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="QR Code"
+                android:enabled="false"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asset Make"
+                android:textSize="18sp"
+                />
+
+
+            <Spinner
+                android:id="@+id/spinnerAssetMake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginTop="5dp"
+                android:entries="@array/array_asset_make">
+            </Spinner>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asset Volume"
+                android:textSize="18sp"
+                />
+
+            <Spinner
+                android:id="@+id/spinnerAssetCapacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginTop="5dp"
+                android:entries="@array/array_cooler_capacity">
+
+            </Spinner>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_pepsi_serial_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/inputPepsiSerialNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PEPSI Serial Number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_oem_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/inputOEMNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="OEM Serial Number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtAssetPictureDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:weightSum="2"
+
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnAssetDelete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_action_submit_button_selector"
+            android:textColor="@color/colorPrimary"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/btnCaptureAssetPicture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Capture Asset Image"
+            android:background="@drawable/ic_action_submit_button_selector"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:textAllCaps="false"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnAssetCancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:background="@drawable/ic_action_submit_button_selector"
+            android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/btnAssetSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Submit"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/ic_action_submit_button_selector"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

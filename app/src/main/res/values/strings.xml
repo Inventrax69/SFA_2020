@@ -1,0 +1,584 @@
+<resources>
+
+
+    <string name="google_app_id">192108019967</string>
+
+    <string name="app_name">SFA</string>
+
+    <!-- Navigation Drawer -->
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_outlet_list">Outlet List</string>
+    <string name="nav_item_order_history">Today\'s Orders</string>
+    <string name="nav_item_delivery_list">Delivery List</string>
+    <string name="nav_item_discount_list">Discounts</string>
+    <string name="nav_item_schemes_list">Schemes</string>
+    <string name="nav_item_outlet_registration">Outlet Registration</string>
+    <string name="nav_item_planogram">Planogram</string>
+    <string name="nav_item_check_asset">Check Asset</string>
+    <string name="nav_item_new_outlet_list">New Outlet List</string>
+    <string name="nav_item_asset_info">Asset Info</string>
+    <string name="nav_item_day_summary">Day Summary</string>
+    <string name="nav_item_psr_day_summary">PSR Day Summary</string>
+    <string name="nav_item_stock_upload">Stock upload</string>
+    <string name="nohistory">No History Available</string>
+    <string-array name="nav_drawer_labels">
+
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_outlet_list</item>
+        <item>@string/nav_item_delivery_list</item>
+        <item>@string/nav_item_order_history</item>
+        <item>@string/nav_item_schemes_list</item>
+        <item>@string/nav_item_outlet_registration</item>
+
+    </string-array>
+
+    <string name="title_home">Home</string>
+    <string name="title_outlet_list">Outlet List</string>
+    <string name="title_order_history">Today\'s Orders</string>
+    <string name="title_delivery_list">Delivery List</string>
+    <string name="title_sku_list">SKU List</string>
+    <string name="title_discount_list">Discounts</string>
+    <string name="title_scheme_list">Schemes</string>
+    <string name="title_outlet_registration">Outlet Registration</string>
+    <string name="title_complaint_registration">Complaint Registration</string>
+    <string name="title_book_order">Order Booking</string>
+    <string name="title_dashboard"></string>
+    <string name="title_order_summary">Order Summary</string>
+    <string name="title_about">About</string>
+    <string name="title_asset_complaint">Asset Complaint</string>
+    <string name="title_asset_audit">Audit Form</string>
+    <string name="title_planogram">Planogram</string>
+    <string name="title_check_asset">Check Asset</string>
+    <string name="title_pullout_form">Asset Pullout</string>
+    <string name="title_asset_request">Asset Request</string>
+    <string name="title_new_outlet_list">New Outlet List</string>
+    <string name="title_asset_info">Asset Info</string>
+    <string name="title_day_summary">Day Summary</string>
+    <string name="title_customer_returns">Customer Returns</string>
+    <string name="title_psr_day_summary">Day Summary</string>
+
+    <!-- Navigation Drawer -->
+
+    <!-- Menu -->
+
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_about">About</string>
+    <string name="ic_action_brand_spinner">Brand List</string>
+    <string name="ic_action_pack_spinner">Pack List</string>
+    <string name="ic_action_lang_spinner">Languages</string>
+
+    <!-- Menu -->
+
+    <!-- Splash Screen -->
+
+    <string name="splash_txt_powered_by">Powered By</string>
+    <string name="splash_txt_inventrax_site">www.inventrax.com</string>
+
+    <!-- Splash Screen -->
+
+    <!-- Login Screen -->
+
+    <string name="hint_user_id">User Id</string>
+    <string name="hint_password">Password</string>
+
+    <string name="err_msg_user_id">Please enter a valid user id</string>
+    <string name="err_msg_password">Please enter a valid password</string>
+
+    <string name="login_chk_remember_password">Remember Password</string>
+    <string name="login_sign_in_button_text">Login</string>
+
+    <!-- Login Screen -->
+
+    <!-- Dashboard -->
+
+    <!-- Dashboard -->
+
+
+    <!-- Outlet List -->
+
+    <string name="outlet_list_recycler_empty_view">No Outlet Is Available</string>
+
+    <string name="filter_array_book_order">Book Order</string>
+    <string name="filter_array_order_history">Order History</string>
+    <string name="filter_array_delivery_list">Delivery List</string>
+
+    <string-array name="outlet_order_filter_array">
+        <item>@string/filter_array_book_order</item>
+        <item>@string/filter_array_order_history</item>
+        <item>@string/filter_array_delivery_list</item>
+    </string-array>
+
+    <!-- Outlet List -->
+
+
+    <!-- Order History -->
+
+    <string name="order_history_list_recycler_empty_view">No Order Is Available</string>
+
+    <!-- Order History -->
+
+
+    <!-- Delivery List -->
+
+    <string name="delivery_list_recycler_empty_view">No Delivery Is Available</string>
+
+    <string-array name="array_bank_list">
+        <item>Select Bank</item>
+        <item>State Bank of India</item>
+        <item>State Bank of Patiala</item>
+        <item>State Bank of Mysore</item>
+        <item>State Bank of Travancore</item>
+        <item>State Bank of Bikaner and Jaipur</item>
+        <item>State Bank of Hyderabad</item>
+        <item>Allahabad Bank</item>
+        <item>Andhra Bank</item>
+        <item>Bank of Baroda</item>
+        <item>Bank of India</item>
+        <item>Bank of Maharashtra</item>
+        <item>Canara Bank</item>
+        <item>Central Bank of India</item>
+        <item>Corporation Bank</item>
+        <item>Dena Bank</item>
+        <item>Indian Bank</item>
+        <item>Indian Overseas Bank</item>
+        <item>Oriental Bank of Commerce</item>
+        <item>Punjab &amp; Sind Bank</item>
+        <item>Punjab National Bank</item>
+        <item>Syndicate Bank</item>
+        <item>UCO Bank</item>
+        <item>Union Bank of India</item>
+        <item>United Bank of India</item>
+        <item>Vijaya Bank</item>
+        <item>IDBI Bank</item>
+        <item>Bharatiya Mahila Bank[2]</item>
+
+    </string-array>
+
+    <!-- Delivery List -->
+
+
+    <!-- SKU List -->
+    <string name="sku_list_recycler_empty_view">No SKU Is Available</string>
+    <string name="sku_list_bnt_cart">Add</string>
+
+    <string name="sku_list_txt_bottle_quantity_hint">Bottles</string>
+    <string name="sku_list_txt_case_quantity_hint">Cases</string>
+
+    <string name="sku_list_btn_checkout_text">Check Out</string>
+
+
+    <string-array name="array_item_uom">
+        <item>EA</item>
+        <item>Case / 24 </item>
+        <item>Pack / 12 </item>
+        <item>Box / 9 </item>
+    </string-array>
+
+    <!-- SKU List -->
+
+
+    <!-- Discounts -->
+    <string name="discount_list_recycler_empty_view">No Discount Is Available</string>
+    <!-- Discounts -->
+
+
+    <!-- Outlet Registration -->
+
+    <!-- Outlet Registration -->
+
+
+    <!-- Complaint Registration -->
+
+    <!-- Complaint Registration -->
+
+
+    <!-- Order Booking -->
+
+    <!-- Order Booking -->
+
+    <!-- Order Summary -->
+
+    <string name="order_summary_footer_button_confirm_order">Confirm Order</string>
+
+    <!-- Order Summary -->
+
+    <!-- Item List -->
+
+    <string name="item_list_recycler_empty_view">No SKU Is Available</string>
+
+    <!-- Item List -->
+
+
+    <!-- About -->
+
+    <string name="fragment_about_txt_copy_right">Copyright © 2016 Inventrax, All rights reserved.</string>
+    <string name="fragment_about_txt_inventrax_link">www.inventrax.com</string>
+    <string name="fragment_about_txt_version">Version :</string>
+    <string name="fragment_about_txt_visit">Visit :</string>
+
+    <!-- About -->
+
+
+    <!-- Global String Values -->
+
+    <string name="ChannelCode">Channel Code</string>
+    <string name="LandMark">Land Mark</string>
+    <string name="AccountType">Account Type</string>
+    <string name="OutletName">Outlet Name</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="OutletCode">Outlet Code</string>
+    <string name="OrderNumber">Order Number</string>
+    <string name="OrderDate">Order Date</string>
+    <string name="OrderValue">Order Value</string>
+    <string name="BrandName">Brand Name</string>
+    <string name="BrandPackName">Brand Pack Name</string>
+    <string name="MRP">MRP</string>
+    <string name="Add">Add</string>
+    <string name="Discount">Discount</string>
+    <string name="AvailableStock">Avl. Stock</string>
+    <string name="OutletType">Outlet Type</string>
+    <string name="DiscountInfo">Discount Info</string>
+    <string name="RouteCode">Route Code </string>
+    <string name="OwnerName">Owner Name</string>
+    <string name="PaymentMode">Payment Mode</string>
+    <string name="Cash">Cash</string>
+    <string name="Cheque">Cheque</string>
+    <string name="Receive">Receive</string>
+    <string name="number_of_cases">No. of cases</string>
+    <string name="number_of_bottles">No. of bottles</string>
+    <string name="Cases">Cases</string>
+    <string name="Bottles">Bottles</string>
+    <string name="ChequeNumber">Cheque Number</string>
+    <string name="TradePrice">Trade</string>
+    <string name="DiscountCode">Discount Code</string>
+    <string name="DiscountName">Discount Name</string>
+    <string name="DiscountType">Discount Type</string>
+    <string name="DiscountValue">Discount Value</string>
+    <string name="TargetItem">Target Item</string>
+    <string name="OfferItem">Offer Item</string>
+    <string name="SchemeCode">Scheme Code</string>
+    <string name="SchemeName">Scheme Name</string>
+    <string name="SchemeDescription">Scheme Description</string>
+    <string name="Validity">Validity</string>
+    <string name="Address">Address</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Scheme">Scheme</string>
+    <string name="CustomerOperations">Outlet Operations</string>
+    <string name="BookOrder">Book Order</string>
+    <string name="OrderDetails">Order Details</string>
+    <string name="Rs">\u20B9</string>
+    <string name="Route">Route :</string>
+    <string name="CheckIn">Check-In</string>
+    <string name="Brand">Brand :</string>
+    <string name="Pack">Pack :</string>
+    <string name="Crates">Crates</string>
+    <string name="InvoiceNumber">Invoice Number</string>
+    <string name="StockDetails">Stock Details</string>
+    <string name="OrderType">Order Type</string>
+    <string name="OrderStatus">Order Status</string>
+    <string name="Pleaseenterquantity">Please enter quantity</string>
+    <string name="Receives">Receive Cash</string>
+    <string name="Receivecheque">Receive Cheque</string>
+
+    <!-- Global String Values -->
+
+    <string-array name="array_complaint_type">
+        <item>Select Complaint Type</item>
+        <item>Cooler Not Working</item>
+        <item>Less Cooling</item>
+        <item>Tubelight Not Working</item>
+        <item>Rack Rusted</item>
+        <item>No Front Cover</item>
+        <item>Wheels Problem</item>
+        <item>Cooler Decalls</item>
+        <item>Glass Door Broken</item>
+        <item>Door Seal Problem</item>
+        <item>Cron Collector</item>
+        <item>Cron Opener</item>
+        <item>Door Handle</item>
+        <item>Canopy Broken</item>
+        <item>Body Rusted</item>
+    </string-array>
+
+    <string-array name="array_cooler_capacity">
+        <item>Select Volume</item>
+        <!--<item>50L EBC</item>-->
+        <item>65L</item>
+        <item>70L</item>
+        <item>100L EBC</item>
+        <item>110L</item>
+        <item>120L</item>
+        <item>125L EBC</item>
+        <item>165L</item>
+        <item>175L</item>
+        <item>200L EBC</item>
+        <item>220L</item>
+        <item>280L</item>
+        <item>320L</item>
+        <item>350L</item>
+        <item>400L</item>
+        <item>425L</item>
+        <item>450L</item>
+        <item>550L</item>
+        <item>600L</item>
+        <item>650L</item>
+        <item>1000L</item>
+
+    </string-array>
+
+    <string-array name="array_asset_make">
+        <item>Select Asset Make</item>
+        <item>Western</item>
+        <item>Everest</item>
+        <item>Allwyn</item>
+        <item>Carrier</item>
+        <item>Rockwell</item>
+        <item>Seaga</item>
+        <item>Voltas</item>
+        <item>Godrej</item>
+    </string-array>
+
+    <string name="error_kiosk_mode">Unexpected error while setting KIOSK Mode</string>
+
+    <string name="elm_key">5D92A4D8D897A039DCF4FBEBE1558178077BF0694B1AE8CAB76541485DBD1D66D7DCE34B619A135B0D498EF21074CE5DA246473B12ACC9BD7AFB671ADAC0CBBA</string>
+
+    <string name="device_administration">Device Administration</string>
+    <string name="enable_admin">Enable Admin</string>
+
+
+    <string-array name="channelArray">
+
+        <item>Select Channel</item>
+        <item>Convenience</item>
+        <item>Grocery</item>
+        <item>Eateries</item>
+        <item>Transport</item>
+        <item>Leisure/Entertainment</item>
+        <item>Institution</item>
+        <item>Wholesale/Retail</item>
+        <item>On Premise</item>
+        <item>Bar</item>
+        <item>Modern Trade</item>
+        <item>Opportunity</item>
+    </string-array>
+    <string-array name="language_array">
+        <item>Select language</item>
+        <item>తెలుగు </item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="array_asset_pullout_reasons">
+
+        <item>Select Reason</item>
+        <item>Less Sales</item>
+        <item>Outlet Closed</item>
+        <item>Replacement</item>
+        <item>Asset Damaged</item>
+
+    </string-array>
+    <!-- dashboard values -->
+    <string name="Scheduled_Calls">Scheduled Calls</string>
+    <string name="Completed_Calls">Completed Calls</string>
+    <string name="percentage_of_Call_Completion">% of Call Completion</string>
+    <string name="strikecalls">Strike Calls</string>
+    <string name="strikerate">Strike Rate</string>
+    <string name="LineSales_Call">Line/Sales Call</string>
+    <string name="Total_calls_made">Total Calls Made</string>
+    <string name="Sales_Cases">Sales ( Cases )</string>
+    <string name="Drop_Size">Drop Size</string>
+    <string name="Total_Lines_Sold">Total Lines Sold</string>
+    <string name="Current_Outlet">Current Outlet</string>
+    <string name="Next_Outlet">Next Outlet</string>
+    <string name="MTD">MTD</string>
+    <string name="AOP">AOP</string>
+    <string name="Achieved">Achieved</string>
+    <string name="RR">RR</string>
+    <string name="YTD_Month">YTD ( Month ) </string>
+    <string name="Run_Rate">Run Rate</string>
+    <string name="Sales">Sales</string>
+    <string name="Volume">Volume</string>
+    <string name="Current_Run_Rate">Current Run Rate</string>
+    <string name="Required_Run_Rate">Required Run Rate</string>
+    <string name="Route_Name">Route Name</string>
+    <!--Outlet List-->
+    <string name="Outlet_Code">Outlet Code</string>
+    <string name="Outlet_Name">Outlet Name</string>
+    <string name="Pepsi">Pepsi</string>
+    <string name="Up">7Up</string>
+    <string name="Mirinda">Mirinda</string>
+    <string name="Diet_Pepsi">Diet Pepsi</string>
+    <string name="Mountain_Dew">Mountain Dew</string>
+    <string name="Revive">Revive</string>
+    <string name="Slice">Slice</string>
+    <string name="Nimbooz">Nimbooz</string>
+    <string name="Lehar_Soda">Lehar Soda</string>
+    <string name="Aquafina">Aquafina</string>
+    <string name="Total">Total - </string>
+    <string name="PCI"> PCI -</string>
+    <string name="CCX">CCX - </string>
+    <string name="MIX">MIX - </string>
+    <string name="Key_Outlet">Key Outlet</string>
+    <string name="Grocery">Grocery</string>
+    <string name="Outlet_Status">Outlet Status</string>
+    <string name="Present_Status">Present Status</string>
+    <string name="orderdialogmessage">Are you sure you want to delete?</string>
+    <string name="PayableAmount">PayableAmount</string>
+    <string name="OrderCreatedSuccessfully">Order Created Successfully</string>
+    <!--Print-->
+    <string name="Print">Print</string>
+    <!--About-->
+    <string name="User_Manual">User Manual</string>
+    <string name="HelpLineNumber">Help Line Number : 8333858060</string>
+    <string name="Check_Update">Check Update</string>
+    <!-- Outlet Registration -->
+
+
+    <string name="outlet_code">Outlet Code</string>
+    <string name="outlet_name">Outlet Name</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="channel_type">Channel Type</string>
+    <string name="account_type">Account Type</string>
+    <string name="outlet_type">Outlet Type</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="email">Email</string>
+    <string name="door_number">Door Number</string>
+    <string name="land_mark">Landmark</string>
+    <string name="address">Address</string>
+    <string name="pin_code">PIN Code</string>
+    <string name="tin_number">TIN Number</string>
+    <string name="aadhar_number">Aadhaar Number</string>
+    <string name="res_acra_toast_text">Please logout and login again</string>
+    <string name="MobileNumber1">Mobile Number1</string>
+    <string name="MobileNumber2">Mobile Number2</string>
+    <string name="Bank">Bank :</string>
+    <string name="AddMore">Add More</string>
+    <string name="General">General</string>
+    <string name="Key">Key</string>
+    <string name="IsaDisplayAccount">Is a Display Account</string>
+    <string name="IsPetSelling">Is Pet Selling</string>
+    <string name="IsaCreditAccount">Is a Credit Account</string>
+    <string name="CaptureOutletPicture">Capture Outlet Picture</string>
+    <string name="AddAsset">Add Asset</string>
+    <string name="AssetDetails">Asset Details</string>
+    <string name="CoolerCapacity">Cooler Capacity</string>
+    <string name="View">View</string>
+    <string name="TotalCallsMade"> Total Calls Made</string>
+    <string name="FreshChoice">Fresh Choice</string>
+
+
+    <!-- Outlet Registration -->
+    <!--Asset-->
+    <string name="Cooler_Size">Cooler Size</string>
+     <string name="Night_Guard">Night Guard</string>
+    <string name="Glass">Glass in C/S</string>
+    <string name="AssetSerialNumber">Asset Serial Number</string>
+    <string name="Remarks">Remarks</string>
+    <string name="Submit">Submit</string>
+    <string name="Audit_History">Audit History</string>
+    <string name="NoSerialNumberOnAsset">No Serial Number On Asset</string>
+    <string name="Hasnightguard">Has night guard</string>
+    <string name="CoolerType">Cooler Type :</string>
+    <string name="VISI">VISI</string>
+    <string name="EBC">EBC</string>
+    <string name="QRCode">QR Code</string>
+    <string name="AssetMake">Asset Make</string>
+    <string name="AssetVolume">Asset Volume</string>
+    <string name="pepsiserialno">PEPSI Serial Number</string>
+    <string name="oemserialno">OEM Serial Number</string>
+    <string name="Delete">Delete</string>
+    <string name="CaptureAssetPicture">Capture Asset Picture</string>
+    <string name="Cancel">Cancel</string>
+    <string name="ProposedStatus">Proposed Status</string>
+    <string name="ScanAssetSerialNumber">Scan Asset Serial Number</string>
+    <string name="Check_Asset">Check Asset</string>
+    <string name="Asset_Details">Asset Details :</string>
+    <string name="InstalledBy">Installed By</string>
+    <string name="Installeddate">Installed date</string>
+    <string name="AssetType">Asset Type</string>
+    <string name="ComplaintType">Complaint Type</string>
+    <string name="ComplaintHistory">Complaint History</string>
+    <string name="CrownValue">Crown Value</string>
+    <!--Orders-->
+    <string name="CreditAmount">Credit Amount</string>
+    <string name="TotalOrdervalue">Total Order value</string>
+    <string name="TotalOrderQuantity">Total Order Quantity</string>
+    <string name="TotalCashCollected">Total Cash Collected</string>
+    <string name="NoofCrates">No. of Crates</string>
+    <string name="NoofEmpties">No. of Empties</string>
+    <string name="Fulls">Fulls</string>
+    <string name="RequestforSettlement">Request for Settlement</string>
+    <string name="dialoguemessage">Are you sure you want to checkout</string>
+    <string name="Yes">YES</string>
+    <string name="NO">NO</string>
+    <string name="UnitPrice">UnitPrice</string>
+    <string name="confirmordermessage">Are you sure you want to confirm the order</string>
+    <string name="Confirm_Order">CONFIRM ORDER</string>
+    <string name="Items"> Items</string>
+    <string name="Item"> Item</string>
+    <string name="LastAuditDetails">Last Audit Details :</string>
+    <string name="AuditHistory">Audit History</string>
+   <string name="MachineStatus">MachineStatus</string>
+   <string name="Working">Working</string>
+    <string name="NotWorking">NotWorking</string>
+    <string name="Scrap">Scrap</string>
+    <string name="PulloutReason">PulloutReason</string>
+    <string name="serialno">Serial No.</string>
+    <string name="ComplainDate">Complain Date</string>
+    <string name="Customercode">Customer Code</string>
+    <string name="AuditDate">Audit Date</string>
+    <string name="LastAuditDate">Last Audit Date</string>
+    <string name="checkoutmessage">You have successfully checked out</string>
+    <string name="Model">Model</string>
+    <string name="Make">Make</string>
+    <string name="PepsiSerialNo">Pepsi Serial No.</string>
+    <string name="OEMNo">OEM No.</string>
+    <string name="Loadingmessage">Please Wait</string>
+    <string name="internetenablemessage">Please enable internet</string>
+    <string name="OrderSKU">Order SKU : [ </string>
+    <string name="OfferSKU"> Offer SKU : [ </string>
+    <string name="Schemes">Scheme : </string>
+    <string name="Assets">Assets [ </string>
+    <string name="OrderSKUs">Order SKU</string>
+    <string name="OrderQty"> Order Qty.</string>
+    <string name="OfferSKUss"> Offer SKU </string>
+    <string name="OfferQty">Offer Qty.</string>
+    <string name="withsemicolumnmrp">MRP : </string>
+    <string name="SchemeDiscount">Scheme/Discount  :</string>
+    <string name="ValidFrom">Valid From </string>
+    <string name="to">to </string>
+    <string name="Pleaseupdatedeliverystatus">Please update delivery status</string>
+    <string name="Checking">Checking</string>
+    <string name="Errorwhilecheckingupdate">Error while checking update</string>
+    <string name="Pleasescanvalidserialnumber">Please scan valid serial number</string>
+    <string name="AuditInfoUpdatedSuccessfully">Audit Info. Updated Successfully</string>
+    <string name="ComplaintInitiatedSuccessfully">Complaint Initiated Successfully</string>
+    <string name="ScannedQRcodenotmappedtothiscustomer">Scanned QR code not mapped to this customer</string>
+    <string name="Proposedcoolersizecannotbeempty">Proposed cooler size cannot be empty</string>
+    <string name="Assetrequestupdatedsuccessfully">Asset request updated successfully</string>
+    <string name="Errorwhileupdatingassetrequest">Error while updating asset request</string>
+    <string name="AssetNotTagged">Asset Not Tagged</string>
+    <string name="SuccessfullyUpdated">Successfully Updated</string>
+    <string name="InvalidResponse">Invalid Response</string>
+    <string name="Salemessage">Do you want to close the sale day for settlement?</string>
+    <string name="Ordersmessage">Some of the orders not yet synced, Please wait...</string>
+    <string name="Pleasecheckinternetconnectivity">Please check internet connectivity</string>
+    <string name="Errorwhileloadingorderinformation">Error while loading order information</string>
+    <string name="Pleaseselectpaymentmode">Please select payment mode</string>
+    <string name="bankandchequeno">Please select bank and enter cheque number</string>
+    <string name="Pleaseentercash">Please enter cash</string>
+    <string name="insufficientquantity">Insufficient quantity to update delivery</string>
+    <string name="orderupdated">Order Updated Successfully</string>
+    <string name="InvalidOrder">Invalid Order</string>
+    <string name="locationinformation">Location Information Is Not Available</string>
+    <string name="Errorwhilecheckingout">Error while checking out</string>
+     <string name="Errorwhilecheckin">Error while check-in</string>
+     <string name="Youhavesuccessfullycheckedin">You have successfully checked in</string>
+    <string name="Errorwhileinitializingoutletlist">Error while initializing outlet list</string>
+    <string name="depot">Depot</string>
+</resources>
