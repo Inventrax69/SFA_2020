@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -13,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,37 +32,20 @@ import com.inventrax_pepsi.application.AppController;
 import com.inventrax_pepsi.common.Log.Logger;
 import com.inventrax_pepsi.common.constants.ServiceCode;
 import com.inventrax_pepsi.common.constants.ServiceURLConstants;
-import com.inventrax_pepsi.database.DatabaseHelper;
-import com.inventrax_pepsi.database.TableVehicleStock;
-import com.inventrax_pepsi.database.pojos.VehicleStock;
-import com.inventrax_pepsi.fragments.OrderSummaryFragment;
 import com.inventrax_pepsi.fragments.OutletRegistrationFragment;
 import com.inventrax_pepsi.fragments.StockUploadListFragment;
-import com.inventrax_pepsi.interfaces.OnLoadMoreListener;
 import com.inventrax_pepsi.interfaces.SKUListView;
 import com.inventrax_pepsi.sfa.pojos.ActiveStock;
 import com.inventrax_pepsi.sfa.pojos.AuditInfo;
-import com.inventrax_pepsi.sfa.pojos.CustomerDiscount;
 import com.inventrax_pepsi.sfa.pojos.ExecutionResponse;
-import com.inventrax_pepsi.sfa.pojos.Item;
-import com.inventrax_pepsi.sfa.pojos.ItemPrice;
-import com.inventrax_pepsi.sfa.pojos.ItemUoM;
 import com.inventrax_pepsi.sfa.pojos.Load;
 import com.inventrax_pepsi.sfa.pojos.LoadItem;
 import com.inventrax_pepsi.sfa.pojos.RootObject;
-import com.inventrax_pepsi.sfa.pojos.SKUHistory;
-import com.inventrax_pepsi.sfa.pojos.Scheme;
-import com.inventrax_pepsi.sfa.pojos.SchemeOfferItem;
-import com.inventrax_pepsi.sfa.pojos.SchemeTargetItem;
 import com.inventrax_pepsi.sfa.pojos.User;
-import com.inventrax_pepsi.sfa.scheme.SchemeUtil;
-import com.inventrax_pepsi.sfa.sku.ItemUtil;
 import com.inventrax_pepsi.util.DialogUtils;
 import com.inventrax_pepsi.util.FragmentUtils;
-import com.inventrax_pepsi.util.NumberUtils;
 import com.inventrax_pepsi.util.ProgressDialogUtils;
 import com.inventrax_pepsi.util.SoapUtils;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -80,9 +55,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Author   : Padmaja.b
@@ -91,7 +64,7 @@ import java.util.Map;
  */
 
 
-public class StockListAdapter extends RecyclerView.Adapter {
+public class StockListConfirmationAdapter extends RecyclerView.Adapter {
 
     private List<ActiveStock> itemList;
 
@@ -100,26 +73,22 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
     private FragmentActivity fragmentActivity;
     private Gson gson;
-    private SKUListView skuListView;
+
     private List<ActiveStock> activeStockList;
-    private RelativeLayout relativeLayoutUpdate;
-    private LinearLayout llTotalSKU;
-    private Button btnUpdate;
-    private TextView txtSKUsModified;
+
     private int selectedCustomerID;
-    private MaterialDialog materialDialogStockUploadList;
-    private RecyclerView rv_addedSkuList;
-    private Button btnCloseDialog, btnUpdateStock;
 
-    public StockListAdapter(FragmentActivity fragmentActivity, List<ActiveStock> items, RecyclerView recyclerView, RelativeLayout relativeLayout, LinearLayout llTotalSKU, Button btnUpdate, TextView txtSKUsModified, int selectedCustomerID) {
-        setStockSKUListAdapter(fragmentActivity, items, recyclerView, relativeLayout, llTotalSKU, btnUpdate, txtSKUsModified, selectedCustomerID);
+
+
+    public StockListConfirmationAdapter(FragmentActivity fragmentActivity, List<ActiveStock> items,int selectedCustomerID) {
+        setStockSKUListAdapter(fragmentActivity, items, selectedCustomerID);
     }
 
-    public StockListAdapter() {
+    public StockListConfirmationAdapter() {
 
     }
 
-    public void setStockSKUListAdapter(FragmentActivity fragmentActivity, List<ActiveStock> items, RecyclerView recyclerView, RelativeLayout relativeLayout, LinearLayout llTotalSKU, Button btnUpdate, TextView txtSKUsModified, int selectedCustomerID) {
+    public void setStockSKUListAdapter(FragmentActivity fragmentActivity,List<ActiveStock> items, int selectedCustomerID) {
 
 
         context = AbstractApplication.get();
@@ -127,21 +96,10 @@ public class StockListAdapter extends RecyclerView.Adapter {
         itemList = items;
         this.fragmentActivity = fragmentActivity;
         gson = new GsonBuilder().create();
-        this.skuListView = skuListView;
-        relativeLayoutUpdate = relativeLayout;
-        this.btnUpdate = btnUpdate;
         this.selectedCustomerID = selectedCustomerID;
-        this.txtSKUsModified = txtSKUsModified;
-        this.llTotalSKU = llTotalSKU;
 
         activeStockList = new ArrayList<>();
 
-        if (recyclerView.getLayoutManager() instanceof LinearLayoutManager) {
-
-            final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView
-                    .getLayoutManager();
-
-        }
     }
 
 
@@ -151,7 +109,7 @@ public class StockListAdapter extends RecyclerView.Adapter {
         RecyclerView.ViewHolder viewHolder;
 
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.stock_upload_list_row, parent, false);
+                R.layout.stock_upload_confirmation_dialog_row, parent, false);
 
         viewHolder = new ItemViewHolder(view);
 
@@ -168,128 +126,22 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
             ((ItemViewHolder) holder).txtBrandPackName.setText(item.getItemName());
 
-            ((ItemViewHolder) holder).txtSKUPrice.setText("MRP" + ":" + " " + (int) item.getMRP());
+            ((ItemViewHolder) holder).txtSKUPrice.setText("MRP" + ":" + " "+(int) item.getMRP());
             String qty = String.valueOf(item.getQuantity());
-            ((ItemViewHolder) holder).txtCaseQuantity.setText(qty.split("[.]")[0]);
-            ((ItemViewHolder) holder).txtBottleQuantity.setText(qty.split("[.]")[1]);
-
-            ((ItemViewHolder) holder).btnAdd.setVisibility(View.GONE);
-
-            ((ItemViewHolder) holder).edit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((ItemViewHolder) holder).btnAdd.setVisibility(View.VISIBLE);
-                }
-            });
-
-
-            llTotalSKU.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-                    showDialog();
-                }
-            });
-
-
-            ((ItemViewHolder) holder).btnAdd.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    relativeLayoutUpdate.setVisibility(View.VISIBLE);
-
-                    ActiveStock activeStock = itemList.get(position);
-
-                    String strCaseQuantity = ((ItemViewHolder) holder).txtCaseQuantity.getText().toString(), strBottleQuantity = ((ItemViewHolder) holder).txtBottleQuantity.getText().toString();
-
-                    if (TextUtils.isEmpty(strCaseQuantity) && TextUtils.isEmpty(strBottleQuantity)) {
-
-                        //Toast.makeText(fragmentActivity, "Please enter quantity", Toast.LENGTH_LONG).show();
-                        DialogUtils.showAlertDialog(fragmentActivity, "");
-
-                    } else {
-
-                        activeStock.setQuantity(Double.parseDouble(((ItemViewHolder) holder).txtCaseQuantity.getText().toString()));
-                        activeStock.setFullBottle(Double.parseDouble(((ItemViewHolder) holder).txtBottleQuantity.getText().toString()));
-                        activeStockList.add(activeStock);
-
-                        txtSKUsModified.setText(String.valueOf(activeStockList.size()));
-
-                        ((ItemViewHolder) holder).txtCaseQuantity.setText(String.valueOf((int) activeStock.getQuantity()));
-                        ((ItemViewHolder) holder).txtBottleQuantity.setText(String.valueOf((int) activeStock.getFullBottle()));
-
-                        hideKeyBoard(view, ((ItemViewHolder) holder).txtCaseQuantity);
-                        hideKeyBoard(view, ((ItemViewHolder) holder).txtBottleQuantity);
-
-                        //notifyDataSetChanged();
-                    }
-                }
-            });
-
-
-            btnUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    DialogUtils.showConfirmDialog(fragmentActivity, "Confirm", "Are you sure to proceed ?", new handleUserConfirmation());
-                }
-            });
+            ((ItemViewHolder) holder).txtCaseQuantity.setText(String.valueOf((int) item.getQuantity()));
+            ((ItemViewHolder) holder).txtBottleQuantity.setText(String.valueOf((int) item.getFullBottle()));
 
 
         } catch (Exception ex) {
-            Logger.Log(StockListAdapter.class.getName(), ex);
+            Logger.Log(StockListConfirmationAdapter.class.getName(), ex);
         }
+
 
 
     }
 
-    private void showDialog() {
 
-        try {
-
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-
-            MaterialDialog.Builder builderImageDialog = new MaterialDialog.Builder(fragmentActivity)
-                    .title("SKU List")
-                    .customView(R.layout.dialog_stock_upload, true)
-                    .cancelable(false);
-
-            materialDialogStockUploadList = builderImageDialog.build();
-
-            rv_addedSkuList = (RecyclerView) materialDialogStockUploadList.findViewById(R.id.rv_addedSkuList);
-            btnCloseDialog = (Button) materialDialogStockUploadList.findViewById(R.id.btnCloseDialog);
-            btnUpdateStock = (Button) materialDialogStockUploadList.findViewById(R.id.btnUpdateStock);
-
-            btnCloseDialog.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    materialDialogStockUploadList.dismiss();
-                }
-            });
-
-            btnUpdateStock.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    DialogUtils.showConfirmDialog(fragmentActivity, "Confirm", "Are you sure to proceed ?", new handleUserConfirmation());
-                }
-            });
-
-            rv_addedSkuList.setLayoutManager(linearLayoutManager);
-
-            StockListConfirmationAdapter lstAdp = new StockListConfirmationAdapter();
-            lstAdp.setStockSKUListAdapter(fragmentActivity, activeStockList, selectedCustomerID);
-            rv_addedSkuList.setAdapter(lstAdp);
-
-            materialDialogStockUploadList.show();
-
-        } catch (Exception ex) {
-            Logger.Log(OutletRegistrationFragment.class.getName(), ex);
-            return;
-        }
-
-    }
-
-    private class handleUserConfirmation implements DialogInterface.OnClickListener {
+    private class handleUserConfirmation implements DialogInterface.OnClickListener{
 
 
         @Override
@@ -300,7 +152,7 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
                     if (activeStockList.size() > 0) {
                         updateListAsync();
-                    } else {
+                    }else {
                         Toast.makeText(context, "Add at least one sku to proceed", Toast.LENGTH_SHORT).show();
                     }
 
@@ -356,23 +208,13 @@ public class StockListAdapter extends RecyclerView.Adapter {
                             if (executionResponse.getSuccess() == 1) {
                                 Log.d("x", responseJSON);
 
-                                if (materialDialogStockUploadList != null)
-                                    materialDialogStockUploadList.dismiss();
+                                StockUploadListFragment stockUploadListFragment = new StockUploadListFragment();
 
-                                DialogUtils.showAlertDialog(fragmentActivity, "Success", "Stock uploaded successfully !", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("customerIdSelected", selectedCustomerID);
+                                stockUploadListFragment.setArguments(bundle);
 
-                                        StockUploadListFragment stockUploadListFragment = new StockUploadListFragment();
-
-                                        Bundle bundle = new Bundle();
-                                        bundle.putInt("customerIdSelected", selectedCustomerID);
-                                        stockUploadListFragment.setArguments(bundle);
-
-                                        FragmentUtils.replaceFragment(fragmentActivity, R.id.container_body, stockUploadListFragment);
-                                    }
-                                });
-
+                                FragmentUtils.replaceFragment(fragmentActivity, R.id.container_body, stockUploadListFragment);
 
                             } else {
                                 Toast.makeText(fragmentActivity, "Failed to update stock. Please try again or contact support team", Toast.LENGTH_SHORT).show();
@@ -480,10 +322,8 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
         public TextView txtBrandPackName, txtSKUPrice;
 
-        public RelativeLayout btnAdd;
-
         public EditText txtCaseQuantity, txtBottleQuantity;
-        public ImageView edit;
+
 
 
         public ItemViewHolder(View v) {
@@ -493,12 +333,9 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
             txtSKUPrice = (TextView) v.findViewById(R.id.txtSKUPrice);
 
-            btnAdd = (RelativeLayout) v.findViewById(R.id.btnAdd);
-
             txtCaseQuantity = (EditText) v.findViewById(R.id.txtCaseQuantity);
             txtBottleQuantity = (EditText) v.findViewById(R.id.txtBottleQuantity);
 
-            edit = (ImageView) v.findViewById(R.id.edit);
 
 
 
@@ -556,7 +393,7 @@ public class StockListAdapter extends RecyclerView.Adapter {
 
 
         } catch (Exception ex) {
-            Logger.Log(StockListAdapter.class.getName(), ex);
+            Logger.Log(StockListConfirmationAdapter.class.getName(), ex);
             return;
         }
     }

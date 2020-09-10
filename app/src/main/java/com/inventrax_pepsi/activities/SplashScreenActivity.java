@@ -66,14 +66,14 @@ public class SplashScreenActivity extends Activity {
             new UpdateServiceUtils().checkUpdate();
 
 
-            WallpaperManager myWallpaperManager
+            /*WallpaperManager myWallpaperManager
                     = WallpaperManager.getInstance(getApplicationContext());
             try {
                 myWallpaperManager.setResource(R.raw.tab_wallpaper);
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
+            }*/
 
             //android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS, 255);
 

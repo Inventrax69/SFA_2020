@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ import com.inventrax_pepsi.common.SFACommon;
 import com.inventrax_pepsi.common.constants.ServiceCode;
 import com.inventrax_pepsi.common.constants.ServiceURLConstants;
 import com.inventrax_pepsi.database.DatabaseHelper;
+import com.inventrax_pepsi.database.TableItem;
 import com.inventrax_pepsi.sfa.pojos.ActiveStock;
 import com.inventrax_pepsi.sfa.pojos.AuditInfo;
 import com.inventrax_pepsi.sfa.pojos.ExecutionResponse;
@@ -79,14 +81,18 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
     private RelativeLayout skuLayoutBottomBar;
     private TextView txtSKUsModified;
 
+    private LinearLayout llTotalSKU;
+
 
     private MaterialDialog materialSchemeOfferItemsDialog;
 
     private Resources resources;
-    private Spinner brand_spinner;
+    private Spinner spinnerBrandNames, spinnerPack;
+    private TableItem tableItem;
 
     private SFACommon sfaCommon;
     private ArrayList<String> brandList;
+    private ArrayList<String> packList;
 
     List<ActiveStock> activeStockList;
 
@@ -138,6 +144,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
             gson = new GsonBuilder().create();
 
             databaseHelper = DatabaseHelper.getInstance();
+            tableItem = databaseHelper.getTableItem();
 
             skuListRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_sku_list);
 
@@ -146,6 +153,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
             txtSKUsModified = (TextView) rootView.findViewById(R.id.txtSKUsModified);
 
             skuLayoutBottomBar = (RelativeLayout) rootView.findViewById(R.id.skuLayoutBottomBar);
+            llTotalSKU = (LinearLayout) rootView.findViewById(R.id.llTotalSKU);
 
             skuListRecyclerView.setHasFixedSize(true);
             linearLayoutManager = new LinearLayoutManager(getContext());
@@ -157,8 +165,22 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
                 selectedCustomerID= getArguments().getInt("customerIdSelected",0);
             }
 
-            brand_spinner = (Spinner) rootView.findViewById(R.id.brand_spinner);
-            brand_spinner.setOnItemSelectedListener(this);
+            spinnerBrandNames = (Spinner) rootView.findViewById(R.id.action_brand_spinner);
+            spinnerBrandNames.setOnItemSelectedListener(this);
+
+            spinnerPack = (Spinner) rootView.findViewById(R.id.action_pack_spinner);
+            spinnerPack.setOnItemSelectedListener(this);
+
+            brandList = new ArrayList<>();
+            brandList.add("All");
+            brandList.addAll(tableItem.getAllItemBrands());
+            packList = new ArrayList<>();
+            packList.add("All");
+            packList.addAll(tableItem.getAllItemPacks());
+
+
+            spinnerBrandNames = SpinnerUtils.getSpinner(getActivity(), "", spinnerBrandNames, brandList);
+            spinnerPack = SpinnerUtils.getSpinner(getActivity(), "", spinnerPack, packList);
 
             getActiveStockDepotWiseAsync();
 
@@ -176,7 +198,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
 
         try {
             // create an Object for Adapter
-            stockListAdapter = new StockListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar,btnUpdate,txtSKUsModified,selectedCustomerID);
+            stockListAdapter = new StockListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar,llTotalSKU,btnUpdate,txtSKUsModified,selectedCustomerID);
 
             // set the adapter object to the Recyclerview
             skuListRecyclerView.setAdapter(stockListAdapter);
@@ -304,7 +326,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
 
                         }
 
-                        brand_spinner = SpinnerUtils.getSpinner(getActivity(), "", brand_spinner, brandList);
+                        spinnerBrandNames = SpinnerUtils.getSpinner(getActivity(), "", spinnerBrandNames, brandList);
                         displaySKUList(activeStockList);
 
                     }
@@ -365,11 +387,11 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
 
             final List<ActiveStock> filteredModelList = filter(activeStockList, searchText);
 
-            stockListAdapter.setStockSKUListAdapter(getActivity(),filteredModelList,skuListRecyclerView,skuLayoutBottomBar,btnUpdate,txtSKUsModified,selectedCustomerID);
+            stockListAdapter.setStockSKUListAdapter(getActivity(),filteredModelList,skuListRecyclerView,skuLayoutBottomBar, llTotalSKU,btnUpdate,txtSKUsModified,selectedCustomerID);
             stockListAdapter.notifyDataSetChanged();  // data set changed
 
             if (TextUtils.isEmpty(searchText)) {
-                stockListAdapter.setStockSKUListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar,btnUpdate,txtSKUsModified,selectedCustomerID);
+                stockListAdapter.setStockSKUListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar, llTotalSKU,btnUpdate,txtSKUsModified,selectedCustomerID);
                 stockListAdapter.notifyDataSetChanged();
             }
 
@@ -382,17 +404,16 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
     }
 
     private List<ActiveStock> filter(List<ActiveStock> models, String query) {
+
         final List<ActiveStock> filteredModelList = new ArrayList<>();
         try {
-
             query = query.toLowerCase();
-
-
 
             for (ActiveStock model : models) {
                 if (model != null) {
-
-                    if (model.getItemCode().toLowerCase().contains(query.trim()) || model.getItemCode().toLowerCase().contains(query.trim())) {
+                    //todo change one condition to pack value instead of item code
+                    //if (model.getItemCode().toLowerCase().contains(query.trim()) || model.getItemCode().toLowerCase().contains(query.trim())) {
+                    if (model.getItemCode().toLowerCase().contains(query.trim())) {
                         filteredModelList.add(model);
                     }
                 }
@@ -408,23 +429,51 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        searchBrandList(brand_spinner.getSelectedItem().toString());
+    public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
+
+
+        switch (parent.getId()) {
+
+            case R.id.action_brand_spinner: {
+
+
+                if (spinnerBrandNames != null && spinnerPack != null) {
+
+                    searchBrandPackList();
+
+                }
+
+            }
+            break;
+
+            case R.id.action_pack_spinner: {
+
+                if (spinnerBrandNames != null && spinnerPack != null) {
+
+                    searchBrandPackList();
+
+                }
+
+            }
+            break;
+
+        }
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-    private void searchBrandList(String brandSelected) {
+    private void searchBrandPackList() {
         try {
-            final List<ActiveStock> filteredModelList = filterBrandPackList(activeStockList, brandSelected);
+            final List<ActiveStock> filteredModelList = filterBrandPackList(activeStockList, spinnerBrandNames.getSelectedItem().toString(), spinnerPack.getSelectedItem().toString());
 
-            stockListAdapter.setStockSKUListAdapter(getActivity(),filteredModelList,skuListRecyclerView,skuLayoutBottomBar,btnUpdate,txtSKUsModified,selectedCustomerID);
+            stockListAdapter.setStockSKUListAdapter(getActivity(),filteredModelList,skuListRecyclerView,skuLayoutBottomBar, llTotalSKU,btnUpdate,txtSKUsModified,selectedCustomerID);
             stockListAdapter.notifyDataSetChanged();  // data set changed
 
-            if (brandSelected.equalsIgnoreCase("All") && brandSelected.equalsIgnoreCase("All")) {
-                stockListAdapter.setStockSKUListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar,btnUpdate,txtSKUsModified,selectedCustomerID);
+            if (spinnerBrandNames.getSelectedItem().toString().equalsIgnoreCase("All") && spinnerPack.getSelectedItem().toString().equalsIgnoreCase("All")) {
+                stockListAdapter.setStockSKUListAdapter(getActivity(),activeStockList,skuListRecyclerView,skuLayoutBottomBar, llTotalSKU,btnUpdate,txtSKUsModified,selectedCustomerID);
                 stockListAdapter.notifyDataSetChanged();
             }
 
@@ -435,7 +484,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
         }
     }
 
-    private List<ActiveStock> filterBrandPackList(List<ActiveStock> models, String brandName) {
+    private List<ActiveStock> filterBrandPackList(List<ActiveStock> models, String brandName,String packName) {
 
         try {
 
@@ -444,7 +493,7 @@ public class StockUploadListFragment extends Fragment implements SearchView.OnQu
             for (ActiveStock model : models) {
                 if (model != null) {
 
-                    if ((brandName.equalsIgnoreCase("All") || brandName.equalsIgnoreCase(model.getItemCode())) ) {
+                    if ((brandName.equalsIgnoreCase("All") || brandName.equalsIgnoreCase(model.getItemCode())&& (packName.equalsIgnoreCase("All") || packName.equalsIgnoreCase(model.getItemCode()))) ) {
                         filteredModelList.add(model);
                     }
 

@@ -17,7 +17,7 @@
             android:paddingTop="@dimen/_7sdp"
             android:paddingBottom="@dimen/_7sdp"
             android:layout_marginRight="@dimen/_7sdp"
-            android:weightSum="2">
+            android:weightSum="4">
 
             <TextView
                 android:layout_width="0dp"
@@ -29,14 +29,14 @@
                 android:layout_weight="0.8"/>
 
             <Spinner
-                android:id="@+id/brand_spinner"
+                android:id="@+id/action_brand_spinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:spinnerMode="dialog"
                 android:layout_weight="1"></Spinner>
 
-            <!--<TextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Pack"
@@ -54,11 +54,12 @@
                 android:spinnerMode="dialog"
                 android:layout_weight="1">
 
-            </Spinner>-->
+            </Spinner>
 
         </LinearLayout>
 
     </RelativeLayout>
+
 
     <!--
 
@@ -155,6 +156,7 @@
             >
 
             <LinearLayout
+                android:id="@+id/llTotalSKU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -175,7 +177,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_23sdp"
-                    android:text="Rs 0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_13sdp"
                     android:textStyle="bold" />
