@@ -22,7 +22,7 @@ import com.inventrax_pepsi.fragments.FragmentSliceSlider;
 
 
 public class ImageViewPagerAdapter extends FragmentPagerAdapter {
-    public static int totalPage = 7;
+    public static int totalPage = 3;
     private Context _context;
 
     public ImageViewPagerAdapter(Context context, FragmentManager fm) {
@@ -35,7 +35,7 @@ public class ImageViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment f = new Fragment();
         switch (position) {
-            case 0:
+           /* case 0:
                 f = new FragmentEmojiSliderOne();
                 break;
             case 1:
@@ -43,18 +43,19 @@ public class ImageViewPagerAdapter extends FragmentPagerAdapter {
                 break;
             case 2:
                 f = new FragmentEmojiSliderThree();
-                break;
-            case 3:
+                break;*/
+            case 0:
                 f = new FragmentPepsiSlider();
                 break;
-            case 4:
-                f = new FragmentNimboozSlider();
-                break;
-            case 5:
-                f = new FragmentMTNDewSlider();
-                break;
-            case 6:
+            case 1:
                 f = new FragmentSliceSlider();
+
+                break;
+            /*case 5:
+                f = new FragmentMTNDewSlider();
+                break;*/
+            case 2:
+                f = new FragmentNimboozSlider();
                 break;
 
 

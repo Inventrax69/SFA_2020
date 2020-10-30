@@ -7,7 +7,7 @@
         android:id="@+id/imgSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/slice_slider"
+        android:src="@drawable/banner_slice"
         />
 
 </LinearLayout>

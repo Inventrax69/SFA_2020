@@ -308,7 +308,6 @@ public class SFACommon {
             // CEO
             case 1:{
 
-
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_home),R.drawable.ic_action_menu_home));
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_outlet_list),R.drawable.ic_action_menu_outlet_list,""+( (tableCustomer.getAllCustomers()!=null && tableCustomer.getAllCustomers().size()>0)?tableCustomer.getAllCustomers().size():0)));
                 //menuList.add(new NavDrawerItem( AbstractApplication.get().getString(R.string.title_scheme_list),R.drawable.ic_action_menu_scheme_list, ( ( tableScheme.getAllFilteredSchemes() !=null && tableScheme.getAllFilteredSchemes().size()>0 ) ? tableScheme.getAllFilteredSchemes().size() : 0  )+""  ));
@@ -382,7 +381,7 @@ public class SFACommon {
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_check_asset),R.drawable.ic_action_planogram));
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_day_summary),R.drawable.ic_action_menu_order_history));
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_stock_upload),R.drawable.ic_action_menu_order_history));
-
+                //menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_technician),R.drawable.ic_action_menu_order_history));
 
             }break;
 
@@ -399,8 +398,7 @@ public class SFACommon {
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_planogram),R.drawable.ic_action_planogram));
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_psr_day_summary),R.drawable.ic_action_menu_order_history));
                 menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_stock_upload),R.drawable.ic_action_menu_order_history));
-
-
+                //menuList.add(new NavDrawerItem(AbstractApplication.get().getString(R.string.nav_item_technician),R.drawable.ic_action_menu_outlet_registeration));
 
             }break;
 
@@ -444,7 +442,6 @@ public class SFACommon {
             case "Mirinda Orange":{
                 return ContextCompat.getColor(AbstractApplication.get(), R.color.MirindaOrange);
             }
-
             case "Mirinda Lemon":{
                 return ContextCompat.getColor(AbstractApplication.get(), R.color.MirindaOrange);
             }
@@ -463,11 +460,8 @@ public class SFACommon {
             case "7UP":{
                 return ContextCompat.getColor(AbstractApplication.get(), R.color.SevenUp);
             }
-
         }
-
         return ContextCompat.getColor(AbstractApplication.get(), R.color.colorControlNormal);
-
     }
 
 

@@ -324,12 +324,9 @@ public class LogoutUtil {
 
             ProgressDialogUtils.closeProgressDialog();
 
-            try
-
-            {
+            try {
 
                 if (!TextUtils.isEmpty(result)) {
-
 
                     JSONObject jsonObject = new JSONObject(result);
 
@@ -343,19 +340,13 @@ public class LogoutUtil {
                         executionResponse = rootObject.getExecutionResponse();
 
                     if (executionResponse != null) {
-
                         if (executionResponse.getSuccess() == 1) {
-
                             doLogout();
-
                         }else {
                             doLogout();
                             DialogUtils.showAlertDialog(fragmentActivity,"Error while logout");
                             return;
-
                         }
-
-
 
                     }else {
                         doLogout();
@@ -404,7 +395,9 @@ public class LogoutUtil {
 
 
             Intent loginIntent = new Intent(activity, LoginActivity.class);
+            loginIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             activity.startActivity(loginIntent);
+
 
 
             Toast.makeText(activity, "You have successfully logged out", Toast.LENGTH_LONG).show();

@@ -23,6 +23,7 @@
     <string name="nav_item_asset_info">కూలర్  సమాచారం</string>
     <string name="nav_item_day_summary">రోజువారీ ఆర్డర్ వివరాలు</string>
     <string name="nav_item_psr_day_summary">PSR రోజువారీ ఆర్డర్ వివరాలు </string>
+    <string name="nav_item_technician">Technician</string>
     <string name="nav_item_stock_upload">Stock upload</string>
 
     <string-array name="nav_drawer_labels">

@@ -34,6 +34,7 @@ import com.inventrax_pepsi.fragments.PSRDaySummaryFragment;
 import com.inventrax_pepsi.fragments.PlanogramFragment;
 import com.inventrax_pepsi.fragments.SchemeListFragment;
 import com.inventrax_pepsi.fragments.StockUploadFragment;
+import com.inventrax_pepsi.fragments.TechnicianOutletListFragment;
 import com.inventrax_pepsi.fragments.VehicleStockFragment;
 import com.inventrax_pepsi.interfaces.MainActivityView;
 import com.inventrax_pepsi.model.NavDrawerItem;
@@ -96,8 +97,6 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
                 Logger.Log(AppController.class.getName(), ex);
             }
 
-
-
             setContentView(R.layout.activity_main);
 
             loadFormControls();
@@ -110,8 +109,6 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
             else{
                 displayView(0, new NavDrawerItem(false, "Home"));
             }
-
-
 
         } catch (Exception ex) {
             Logger.Log(MainActivity.class.getName(), ex);
@@ -203,9 +200,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
 
         switch (id) {
             case R.id.action_logout: {
-
                 logoutUtil.performLogoutOperation();
-
             }
             break;
 
@@ -214,14 +209,11 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
             }
 
             case R.id.action_about: {
-
                 FragmentUtils.replaceFragmentWithBackStack(this, R.id.container_body, new AboutFragment());
-
             }
             break;
 
         }
-
 
         return super.onOptionsItemSelected(item);
     }
@@ -234,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
     }
 
     private int GetmenuIndex(String menuTitle) {
-        String[] resourcevalues={resources.getString(R.string.nav_item_home),resources.getString(R.string.nav_item_outlet_list),resources.getString(R.string.nav_item_delivery_list),resources.getString(R.string.nav_item_order_history),resources.getString(R.string.nav_item_outlet_registration),resources.getString(R.string.nav_item_schemes_list),resources.getString(R.string.StockDetails),resources.getString(R.string.nav_item_planogram),resources.getString(R.string.nav_item_check_asset),resources.getString(R.string.nav_item_new_outlet_list),resources.getString(R.string.nav_item_day_summary),resources.getString(R.string.nav_item_psr_day_summary),resources.getString(R.string.nav_item_stock_upload)};
+        String[] resourcevalues={resources.getString(R.string.nav_item_home),resources.getString(R.string.nav_item_outlet_list),resources.getString(R.string.nav_item_delivery_list),resources.getString(R.string.nav_item_order_history),resources.getString(R.string.nav_item_outlet_registration),resources.getString(R.string.nav_item_schemes_list),resources.getString(R.string.StockDetails),resources.getString(R.string.nav_item_planogram),resources.getString(R.string.nav_item_check_asset),resources.getString(R.string.nav_item_new_outlet_list),resources.getString(R.string.nav_item_day_summary),resources.getString(R.string.nav_item_psr_day_summary),resources.getString(R.string.nav_item_stock_upload),resources.getString(R.string.nav_item_technician)};
         for (int i = 0; i < resourcevalues.length; i++) {
             if (resourcevalues[i].equals(menuTitle)) {
                 return i;
@@ -256,6 +248,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
                 bundle.putString("RouteCode", userRouteStringList.get(0));
             }
         }
+
         System.out.println(resources.getString(R.string.nav_item_home));
         switch (GetmenuIndex(menuItem.getTitle())) {
             case 0:
@@ -273,12 +266,10 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
             break;
             case 2: {
 
-
                 fragment = new DeliveryListFragment();
                 fragment.setArguments(bundle);
 
                 title = getString(R.string.title_delivery_list);
-
 
             }
 
@@ -349,7 +340,12 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
 
             }break;
 
+            case 13:{
 
+                fragment = new TechnicianOutletListFragment();
+                title = getString(R.string.title_new_outlet_list);
+
+            }break;
 
             default:
 

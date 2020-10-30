@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-   // compile fileTree(include: ['*.jar'], dir: 'libs')
+    // compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile files('libs/CWAC-WakefulIntentService.jar')
     compile files('libs/ksoap2-android-assembly-2.6.4-jar-with-dependencies.jar')
@@ -86,4 +86,6 @@ dependencies {
     compile 'com.commit451:inkpageindicator:1.0.2'
     compile 'ch.acra:acra:4.5.0'
     compile 'com.intuit.sdp:sdp-android:1.0.5'
+
+    compile 'com.synnapps:carouselview:0.1.5'
 }

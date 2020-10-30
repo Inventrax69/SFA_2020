@@ -3,6 +3,7 @@ package com.inventrax_pepsi.fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -15,8 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.inventrax_pepsi.R;
@@ -32,6 +35,7 @@ import com.inventrax_pepsi.database.DatabaseHelper;
 import com.inventrax_pepsi.database.TableCustomer;
 import com.inventrax_pepsi.database.pojos.Customer;
 import com.inventrax_pepsi.services.sfa_background_services.BackgroundServiceFactory;
+import com.inventrax_pepsi.sfa.pojos.AuditInfo;
 import com.inventrax_pepsi.sfa.pojos.CustomizedUserTarget;
 import com.inventrax_pepsi.sfa.pojos.ExecutionResponse;
 import com.inventrax_pepsi.sfa.pojos.RootObject;
@@ -43,6 +47,10 @@ import com.inventrax_pepsi.util.FragmentUtils;
 import com.inventrax_pepsi.util.NetworkUtils;
 import com.inventrax_pepsi.util.ProgressDialogUtils;
 import com.inventrax_pepsi.util.SoapUtils;
+import com.inventrax_pepsi.util.SpinnerUtils;
+import com.squareup.picasso.Picasso;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import org.json.JSONObject;
 import org.ksoap2.serialization.PropertyInfo;
@@ -57,15 +65,15 @@ import java.util.TimerTask;
  */
 public class DashboardFragment extends Fragment implements View.OnClickListener {
 
-    private static int PAGE_SWITCH_TIME = 3000;
+    private static int PAGE_SWITCH_TIME = 5000;
     private TextView txtScheduledOutlets, txtCoveredOutlets, txtOutletPercentageOfCoverage;
     private TextView txtTotalCallsMade, txtStrikeCalls, txtStrikeRate;
     private TextView txtSalesCases, txtDropSize, txtTotalLinesSold, txtLinesalesCall;
-    private TextView txtCurrentOutlet, txtNextOutlet,txtCurrentOutletId, txtNextOutletId;
+    private TextView txtCurrentOutlet, txtNextOutlet, txtCurrentOutletId, txtNextOutletId;
     private TextView txtMTDCurrentRunRateVolume, txtMTDCurrentRunRateSales, txtMTDRequiredRunRateVolume, txtMTDRequiredRunRateSales;
     private TextView txtYTDCurrentRunRateVolume, txtYTDCurrentRunRateSales, txtYTDRequiredRunRateVolume, txtYTDRequiredRunRateSales;
     private TextView txtAOP, txtAchieved, txtPlusMinus, txtRR, txtCR;
-    private TextView txtTotalOrderValue,txtTotalCashCollected;
+    private TextView txtTotalOrderValue, txtTotalCashCollected;
     private SFACommon sfaCommon;
     private ViewPager _mViewPager;
     private ImageViewPagerAdapter _adapter;
@@ -77,8 +85,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     private DatabaseHelper databaseHelper;
     private TableCustomer tableCustomer;
-
-
+    CarouselView carouselView;
+    ArrayList<String> sliderImages;
+    Customer customerDto;
     private BackgroundServiceFactory backgroundServiceFactory;
 
     @Nullable
@@ -89,12 +98,11 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
         sfaCommon = SFACommon.getInstance();
 
-        try
-        {
+        try {
             loadFormControls();
 
-        }catch (Exception ex){
-            Logger.Log(DashboardFragment.class.getName(),ex);
+        } catch (Exception ex) {
+            Logger.Log(DashboardFragment.class.getName(), ex);
         }
 
 
@@ -112,11 +120,12 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             databaseHelper = DatabaseHelper.getInstance();
             tableCustomer = databaseHelper.getTableCustomer();
 
-            backgroundServiceFactory=BackgroundServiceFactory.getInstance();
+            backgroundServiceFactory = BackgroundServiceFactory.getInstance();
             backgroundServiceFactory.setActivity(getActivity());
             backgroundServiceFactory.setContext(getContext());
 
-            btnRefresh=(ImageButton)rootView.findViewById(R.id.btnRefresh);
+            carouselView = (CarouselView) rootView.findViewById(R.id.carouselView);
+            btnRefresh = (ImageButton) rootView.findViewById(R.id.btnRefresh);
             btnRefresh.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -188,8 +197,21 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             pageSwitcher(DashboardFragment.PAGE_SWITCH_TIME);*/
 
 
-            if (NetworkUtils.getConnectivityStatusAsBoolean(getContext()))
-                setupViewPager();
+
+
+            sliderImages = new ArrayList<>();
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"1.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"2.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"3.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"4.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"5.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"6.png");
+            sliderImages.add(ServiceURLConstants.DASHBOARD_SLIDER_IMAGE_URL + "" +"7.png");
+            carouselView.setPageCount(sliderImages.size());
+            carouselView.setImageListener(imageListener);
+            /*if (NetworkUtils.getConnectivityStatusAsBoolean(getContext()))
+                //setupViewPager();
+                setupCarouselview();*/
 
         } catch (Exception ex) {
             Logger.Log(DashboardFragment.class.getName(), ex);
@@ -199,7 +221,146 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    private void setupViewPager(){
+
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            Picasso.with(getActivity())
+                    .load(String.valueOf(sliderImages.get(position)))
+                    .placeholder(R.drawable.pepsi_logo)
+                    .into(imageView);
+        }
+    };
+
+    public void getUserAssginedDepots() {
+
+
+        customerDto = new Customer();
+
+
+        new AsyncTask<String, Void, String>() {
+
+            @Override
+            protected String doInBackground(String... strings) {
+                String s = GetUserAssginedDepots();
+                return s;
+            }
+
+            @Override
+            protected void onPostExecute(String response) {
+                super.onPostExecute(response);
+                depotList(response);
+                //ProgressDialogUtils.closeProgressDialog();
+            }
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                //ProgressDialogUtils.showProgressDialog();
+            }
+        }.execute();
+
+
+    }
+
+
+    private String GetUserAssginedDepots() {
+        String result = null;
+        try {
+
+            User user = AppController.getUser();
+            com.inventrax_pepsi.sfa.pojos.Customer customer = new com.inventrax_pepsi.sfa.pojos.Customer();
+            AuditInfo auditInfo = new AuditInfo();
+            auditInfo.setUserId(user.getUserId());
+            customer.setAuditInfo(auditInfo);
+
+            List<com.inventrax_pepsi.sfa.pojos.Customer> cust = new ArrayList<>();
+            cust.add(customer);
+
+            if (cust.size() > 0) {
+
+
+                RootObject rootObject = new RootObject();
+
+                rootObject.setServiceCode(ServiceCode.GET_USER_ASSIGNED_DEPOTS);
+                rootObject.setLoginInfo(AppController.getLoginInfo());
+                rootObject.setCustomers(cust);
+                //rootObject.setAsset(customerAuditInfo);
+
+
+                List<PropertyInfo> propertyInfoList = new ArrayList<PropertyInfo>();
+
+                PropertyInfo propertyInfo = new PropertyInfo();
+                propertyInfo.setName("jsonStr");
+                propertyInfo.setValue(gson.toJson(rootObject));
+                propertyInfo.setType(String.class);
+                propertyInfoList.add(propertyInfo);
+
+                result = String.valueOf(SoapUtils.getJSONResponse(propertyInfoList, ServiceURLConstants.GET_USER_ASSIGNED_DEPOTS));
+
+                //Log.d("JsonRes", String.valueOf(SoapUtils.getJSONResponse(propertyInfoList, ServiceURLConstants.GET_USER_ASSIGNED_DEPOTS)));
+
+            }
+
+        } catch (Exception ex) {
+            Logger.Log("Exception", ex);
+        }
+
+        return result;
+    }
+
+    private void depotList(String responseJSON) {
+
+
+        try {
+
+            if (!TextUtils.isEmpty(responseJSON)) {
+
+                JSONObject jsonObject = new JSONObject(responseJSON);
+
+                JSONObject resultJsonObject = jsonObject.getJSONObject("RootObject");
+
+                RootObject rootObject = gson.fromJson(resultJsonObject.toString(), RootObject.class);
+
+                ExecutionResponse executionResponse = null;
+
+                if (rootObject != null)
+                    executionResponse = rootObject.getExecutionResponse();
+
+              /*  if (executionResponse != null) {
+
+                    if (executionResponse.getSuccess() == 1) {
+
+                        List<com.inventrax_pepsi.sfa.pojos.Customer> customers = new ArrayList<>();
+                        customerNames = new ArrayList();
+                        customerIds = new ArrayList();
+
+
+                        for (int i = 0; i <= rootObject.getCustomers().size() - 1; i++) {
+
+                            com.inventrax_pepsi.sfa.pojos.Customer customer = rootObject.getCustomers().get(i);
+                            customers.add(customer);
+                            customerNames.add(customer.getCustomerName());
+                            customerIds.add(String.valueOf(customer.getCustomerId()));
+                        }
+
+                        SpinnerUtils.getSpinner(getActivity(), "Select Depot", spinnerRouteList, customerNames);
+
+                    }
+
+                }*/
+
+            }
+
+        } catch (Exception ex) {
+            Logger.Log(AssetAuditFragment.class.getName(), ex);
+        }
+
+    }
+
+
+   /* private void setupViewPager(){
         try
         {
             _mViewPager = (ViewPager)rootView.findViewById(R.id.viewPagerImageSlider);
@@ -212,17 +373,32 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             images.add("6.png");
             images.add("7.png");
             _mViewPager.setAdapter(new ImageAdapter(images));
-            /*InkPageIndicator inkPageIndicator = (InkPageIndicator)rootView.findViewById(R.id.ink_pager_indicator);
-            inkPageIndicator.setViewPager(_mViewPager);*/
+            *//*InkPageIndicator inkPageIndicator = (InkPageIndicator)rootView.findViewById(R.id.ink_pager_indicator);
+            inkPageIndicator.setViewPager(_mViewPager);*//*
             _mViewPager.setCurrentItem(0);
             _mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+            _mViewPager.setTranslationX(-1 * _mViewPager.getWidth() * _mViewPager.getCurrentItem());
+
+            *//*_mViewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
+                @Override
+                public void transformPage(@NonNull View page, float position) {
+                    page.setAlpha(0f);
+                    page.setVisibility(View.VISIBLE);
+
+                    // Start Animation for a short period of time
+                    page.animate()
+                            .alpha(1f)
+                            .setDuration(page.getResources().getInteger(android.R.integer.config_shortAnimTime));
+                }
+            });*//*
+
             pageSwitcher(DashboardFragment.PAGE_SWITCH_TIME);
 
         }catch (Exception ex){
             Logger.Log(DashboardFragment.class.getName(),ex);
             return;
         }
-    }
+    }*/
 
     private TextView getTextView(int id) {
 
@@ -315,8 +491,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 txtCurrentOutlet.setText("  " + (TextUtils.isEmpty(customizedUserTarget.getVisitedOutlet()) ? "" : customizedUserTarget.getVisitedOutlet()));
                 txtNextOutlet.setText("  " + (TextUtils.isEmpty(customizedUserTarget.getNextOutlet()) ? "" : customizedUserTarget.getNextOutlet()));
 
-                txtCurrentOutletId.setText(""+customizedUserTarget.getVisitedOutletId());
-                txtNextOutletId.setText(""+customizedUserTarget.getNextOutletId());
+                txtCurrentOutletId.setText("" + customizedUserTarget.getVisitedOutletId());
+                txtNextOutletId.setText("" + customizedUserTarget.getNextOutletId());
 
             } else {
 
@@ -326,7 +502,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
         } catch (Exception ex) {
 
-            Logger.Log(DashboardFragment.class.getName(),ex);
+            Logger.Log(DashboardFragment.class.getName(), ex);
             return;
         }
 
@@ -369,7 +545,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
 
         } catch (Exception ex) {
-            Logger.Log(DashboardFragment.class.getName(),ex);
+            Logger.Log(DashboardFragment.class.getName(), ex);
             return;
         }
 
@@ -385,7 +561,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    private void setUpView() {
+    /*private void setUpView() {
 
         try {
 
@@ -400,7 +576,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             return;
         }
 
-    }
+    }*/
 
     private void setTab() {
 
@@ -428,8 +604,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
             });
 
-        }catch (Exception ex){
-            Logger.Log(DashboardFragment.class.getName(),ex);
+        } catch (Exception ex) {
+            Logger.Log(DashboardFragment.class.getName(), ex);
             return;
         }
 
@@ -442,7 +618,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             // in
             // milliseconds
         } catch (Exception ex) {
-            Logger.Log(DashboardFragment.class.getName(),ex);
+            Logger.Log(DashboardFragment.class.getName(), ex);
             return;
         }
     }
@@ -499,8 +675,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 break;
 
             }
-        }catch (Exception ex){
-            Logger.Log(DashboardFragment.class.getName(),ex);
+        } catch (Exception ex) {
+            Logger.Log(DashboardFragment.class.getName(), ex);
             return;
         }
 
@@ -562,7 +738,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
 
             } catch (Exception ex) {
-                Logger.Log(DashboardFragment.class.getName(),ex);
+                Logger.Log(DashboardFragment.class.getName(), ex);
                 return null;
             }
 
@@ -578,8 +754,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
                 processResponse(responseJSON);
 
-            }catch (Exception ex){
-                Logger.Log(DashboardFragment.class.getName(),ex);
+            } catch (Exception ex) {
+                Logger.Log(DashboardFragment.class.getName(), ex);
                 return;
             }
 
@@ -610,7 +786,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 });
 
             } catch (Exception ex) {
-                Logger.Log(DashboardFragment.class.getName(),ex);
+                Logger.Log(DashboardFragment.class.getName(), ex);
                 return;
             }
 
@@ -658,7 +834,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                     view.setAlpha(0);
                 }
             } catch (Exception ex) {
-                Logger.Log(DashboardFragment.class.getName(),ex);
+                Logger.Log(DashboardFragment.class.getName(), ex);
             }
         }
     }
@@ -685,7 +861,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                     try {
 
                         if (!NetworkUtils.getConnectivityStatusAsBoolean(getContext())) {
-                            DialogUtils.showAlertDialog(getActivity(),AbstractApplication.get().getString(R.string.internetenablemessage));
+                            DialogUtils.showAlertDialog(getActivity(), AbstractApplication.get().getString(R.string.internetenablemessage));
                             return false;
                         }
 
@@ -707,8 +883,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
                         DialogUtils.showAlertDialog(getActivity(), "Syncing started, Please Wait ...");
 
-                    }catch (Exception ex){
-                        Logger.Log(DashboardFragment.class.getName(),ex);
+                    } catch (Exception ex) {
+                        Logger.Log(DashboardFragment.class.getName(), ex);
                     }
 
                     return false;

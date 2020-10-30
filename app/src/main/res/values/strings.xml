@@ -24,6 +24,7 @@
     <string name="nav_item_day_summary">Day Summary</string>
     <string name="nav_item_psr_day_summary">PSR Day Summary</string>
     <string name="nav_item_stock_upload">Stock upload</string>
+    <string name="nav_item_technician">Technician</string>
     <string name="nohistory">No History Available</string>
     <string-array name="nav_drawer_labels">
 
@@ -581,4 +582,6 @@
      <string name="Youhavesuccessfullycheckedin">You have successfully checked in</string>
     <string name="Errorwhileinitializingoutletlist">Error while initializing outlet list</string>
     <string name="depot">Depot</string>
+    <string name="message">Your application has been changed to English  </string>
+    <string name="status">Status</string>
 </resources>
