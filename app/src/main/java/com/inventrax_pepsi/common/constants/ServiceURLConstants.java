@@ -15,9 +15,10 @@ public interface ServiceURLConstants {
     //String DOMAIN = "pearlbigleap.in/SFA_Stage";
     //String DOMAIN = "103.252.184.181/SFA_2018/";
     //String DOMAIN = "192.168.1.172/sfa_2020";
-    //String DOMAIN = "192.168.1.20/sfa2020";
+    String DOMAIN = "192.168.1.20/sfa2020";
+    //String DOMAIN = "103.210.72.136/SFA_Stage/";
     //String DOMAIN = "192.168.1.90/SFA_2018/";
-    String DOMAIN = "192.168.1.242/SFA_Stage";
+    //String DOMAIN = "192.168.1.242/SFA_Stage";
 
     String ApplicationASMX = "/mWebServices/SFAStandardWebService.asmx";
 

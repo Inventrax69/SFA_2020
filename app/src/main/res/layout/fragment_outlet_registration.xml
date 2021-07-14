@@ -364,7 +364,8 @@
                         android:layout_height="wrap_content"
                         android:hint="Mobile Number1"
                         android:textSize="@dimen/_13sdp"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:maxEms="10"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -378,7 +379,8 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_13sdp"
                         android:hint="Mobile Number2"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:maxEms="10"/>
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>
